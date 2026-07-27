@@ -1,3 +1,7 @@
 streamlit
 requests
 pandas
+numpy
+rich
+streamlit_authenticator
+pyYAML

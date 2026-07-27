@@ -31,7 +31,7 @@ def authentication():
                - username: The username of the authenticated user.
     """
 
-    with open('./auth.yaml') as file:
+    with open('auth.yaml') as file:
         config = yaml.load(file, Loader=SafeLoader)
 
     authenticator = stauth.Authenticate(

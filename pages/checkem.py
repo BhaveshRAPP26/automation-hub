@@ -16,38 +16,6 @@ from yaml.loader import SafeLoader
 st.set_page_config(page_title="RAPP AE: Check'em", page_icon="✅", layout='wide')
 
 
-def authentication():
-    """
-    Wraps streamlit_authenticator functionality, and handles login functionality. 
-
-    Args:
-        url_list (list) : A list of URL-like strings.
-
-    Returns:
-        tuple: A tuple containing:
-               - name: The name associated with the user who is being authenticated.
-               - authentication_status: The status of the authentication process. It can contain details 
-               about whether the authentication was successful or not.
-               - username: The username of the authenticated user.
-    """
-
-    with open('auth.yaml') as file:
-        config = yaml.load(file, Loader=SafeLoader)
-
-    authenticator = stauth.Authenticate(
-        config['credentials'],
-        config['cookie']['name'],
-        config['cookie']['key'],
-        config['cookie']['expiry_days'],
-        config['preauthorized']
-    )
-
-    name, authentication_status, username = authenticator.login('Login', 'main')
-
-    return name, authentication_status, username
-
-name, authentication_status, username = authentication()
-
 def split_url(url: str):
     """
     Splits a URL into a base URL, query string, and hash fragment (if present).
@@ -584,6 +552,7 @@ def display_unique_param_key_values(processed_data: dict, test=False):
     df.index = pd.RangeIndex(start=1, stop=len(df)+1)
     st.table(df)
 
+authentication_status = True
 if authentication_status:
     # hide the top-right menu and footer (that holds the
     # "Made with Streamlit" link)

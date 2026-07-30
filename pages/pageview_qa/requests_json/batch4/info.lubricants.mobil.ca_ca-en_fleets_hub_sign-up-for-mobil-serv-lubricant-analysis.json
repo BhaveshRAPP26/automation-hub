@@ -1,0 +1,152 @@
+[
+  {
+    "url": "https://px.ads.linkedin.com/collect?v=2&fmt=js&pid=9120570&time=1784735754947&li_adsId=4b7b33ff-c18c-4b54-9255-c39e36886b87&url=https%3A%2F%2Finfo.lubricants.mobil.ca%2Fca-en%2Ffleets%2Fhub%2Fsign-up-for-mobil-lubricant-analysis",
+    "method": "GET",
+    "headers": {
+      "sec-ch-ua": "\"HeadlessChrome\";v=\"123\", \"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"123\"",
+      "referer": "https://info.lubricants.mobil.ca/",
+      "sec-ch-ua-mobile": "?0",
+      "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/123.0.6312.4 Safari/537.36",
+      "sec-ch-ua-platform": "\"Linux\""
+    },
+    "query": {
+      "v": "2",
+      "fmt": "js",
+      "pid": "9120570",
+      "time": "1784735754947",
+      "li_adsId": "4b7b33ff-c18c-4b54-9255-c39e36886b87",
+      "url": "https://info.lubricants.mobil.ca/ca-en/fleets/hub/sign-up-for-mobil-lubricant-analysis"
+    },
+    "post_data": null
+  },
+  {
+    "url": "https://px.ads.linkedin.com/collect?v=2&fmt=js&pid=9120570&time=1784735754947&li_adsId=4b7b33ff-c18c-4b54-9255-c39e36886b87&url=https%3A%2F%2Finfo.lubricants.mobil.ca%2Fca-en%2Ffleets%2Fhub%2Fsign-up-for-mobil-lubricant-analysis&cookiesTest=true",
+    "method": "GET",
+    "headers": {
+      "referer": "https://info.lubricants.mobil.ca/",
+      "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/123.0.6312.4 Safari/537.36"
+    },
+    "query": {
+      "v": "2",
+      "fmt": "js",
+      "pid": "9120570",
+      "time": "1784735754947",
+      "li_adsId": "4b7b33ff-c18c-4b54-9255-c39e36886b87",
+      "url": "https://info.lubricants.mobil.ca/ca-en/fleets/hub/sign-up-for-mobil-lubricant-analysis",
+      "cookiesTest": "true"
+    },
+    "post_data": null
+  },
+  {
+    "url": "https://analytics.google.com/g/collect?v=2&tid=G-941JK4VXK3&gtm=45je67k1h1v878602682z8863654338za20gzb863654338zd863654338&_p=1784735753225&_gaz=1&gcs=G111&gcd=13r3r3r3r5l1&npa=0&dma=0&_eu=AAAAAGA&cid=763409110.1784735756&frm=0&pscdl=noapi&rcb=9&sr=1280x720&uaa=x86&uab=64&uafvl=HeadlessChrome%3B123.0.6312.4%7CNot%253AA-Brand%3B8.0.0.0%7CChromium%3B123.0.6312.4&uam=&uamb=0&uap=Linux&uapv=5.15.167&uaw=0&ul=en-us&gaf=2&_s=1&tag_exp=115938466~115938469~118897920~118897930~119773331~119896803&sid=1784735755&sct=1&seg=0&dl=https%3A%2F%2Finfo.lubricants.mobil.ca%2Fca-en%2Ffleets%2Fhub%2Fsign-up-for-mobil-lubricant-analysis&dt=Mobil%E2%84%A0%20Lubricant%20Analysis%20For%20Your%20Fleet%20-%20Mobil%E2%84%A2&_tu=CA&en=page_view&_fv=1&_nsi=1&_ss=1&ep.gtm_info=GTM-WXRJ44C%7C177&ep.line_of_business=commercial%20lubes&epn.event_timestamp=1784735754717&ep.cookie_status=%2CC0001%2CC0004%2CC0003%2CC0002%2C&ep.cookies_enabled=true&ep.page_category=unknown&ep.page_subcategory=onhwy%20-%20unknown%20-%20mobil%E2%84%A0%20lubricant%20analysis%20for%20your%20fleet%20-%20mobil%E2%84%A2&ep.page_location_clean=https%3A%2F%2Finfo.lubricants.mobil.ca%2Fca-en%2Ffleets%2Fhub%2Fsign-up-for-mobil-lubricant-analysis&ep.page_referrer_clean=&ep.business_unit=commercial%20lubes&ep.form_title=Ready%20to%20learn%20more%20about%20your%20fleet%E2%80%99s%20performance%3F&ep.user_agent=Mozilla%2F5.0%20(X11%3B%20Linux%20x86_64)%20AppleWebKit%2F537.36%20(KHTML%2C%20like%20Gecko)%20HeadlessChrome%2F123.0.6312.4%20Safari%2F537.36&ep.page_url=https%3A%2F%2Finfo.lubricants.mobil.ca%2Fca-en%2Ffleets%2Fhub%2Fsign-up-for-mobil-lubricant-analysis&ep.content_grouping=unknown&ep.commercial_sector=On-Highway&ep.site_engagement_value=NaN&up.journey_stage=unknown&tfd=6663",
+    "method": "POST",
+    "headers": {
+      "sec-ch-ua": "\"HeadlessChrome\";v=\"123\", \"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"123\"",
+      "referer": "https://info.lubricants.mobil.ca/",
+      "sec-ch-ua-mobile": "?0",
+      "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/123.0.6312.4 Safari/537.36",
+      "sec-ch-ua-platform": "\"Linux\""
+    },
+    "query": {
+      "v": "2",
+      "tid": "G-941JK4VXK3",
+      "gtm": "45je67k1h1v878602682z8863654338za20gzb863654338zd863654338",
+      "_p": "1784735753225",
+      "_gaz": "1",
+      "gcs": "G111",
+      "gcd": "13r3r3r3r5l1",
+      "npa": "0",
+      "dma": "0",
+      "_eu": "AAAAAGA",
+      "cid": "763409110.1784735756",
+      "frm": "0",
+      "pscdl": "noapi",
+      "rcb": "9",
+      "sr": "1280x720",
+      "uaa": "x86",
+      "uab": "64",
+      "uafvl": "HeadlessChrome;123.0.6312.4|Not%3AA-Brand;8.0.0.0|Chromium;123.0.6312.4",
+      "uamb": "0",
+      "uap": "Linux",
+      "uapv": "5.15.167",
+      "uaw": "0",
+      "ul": "en-us",
+      "gaf": "2",
+      "_s": "1",
+      "tag_exp": "115938466~115938469~118897920~118897930~119773331~119896803",
+      "sid": "1784735755",
+      "sct": "1",
+      "seg": "0",
+      "dl": "https://info.lubricants.mobil.ca/ca-en/fleets/hub/sign-up-for-mobil-lubricant-analysis",
+      "dt": "Mobil℠ Lubricant Analysis For Your Fleet - Mobil™",
+      "_tu": "CA",
+      "en": "page_view",
+      "_fv": "1",
+      "_nsi": "1",
+      "_ss": "1",
+      "ep.gtm_info": "GTM-WXRJ44C|177",
+      "ep.line_of_business": "commercial lubes",
+      "epn.event_timestamp": "1784735754717",
+      "ep.cookie_status": ",C0001,C0004,C0003,C0002,",
+      "ep.cookies_enabled": "true",
+      "ep.page_category": "unknown",
+      "ep.page_subcategory": "onhwy - unknown - mobil℠ lubricant analysis for your fleet - mobil™",
+      "ep.page_location_clean": "https://info.lubricants.mobil.ca/ca-en/fleets/hub/sign-up-for-mobil-lubricant-analysis",
+      "ep.business_unit": "commercial lubes",
+      "ep.form_title": "Ready to learn more about your fleet’s performance?",
+      "ep.user_agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/123.0.6312.4 Safari/537.36",
+      "ep.page_url": "https://info.lubricants.mobil.ca/ca-en/fleets/hub/sign-up-for-mobil-lubricant-analysis",
+      "ep.content_grouping": "unknown",
+      "ep.commercial_sector": "On-Highway",
+      "ep.site_engagement_value": "NaN",
+      "up.journey_stage": "unknown",
+      "tfd": "6663"
+    },
+    "post_data": null
+  },
+  {
+    "url": "https://stats.g.doubleclick.net/g/collect?v=2&tid=G-941JK4VXK3&cid=763409110.1784735756&gtm=45je67k1h1v878602682z8863654338za20gzb863654338zd863654338&rcb=9&aip=1&dma=0&gcs=G111&gcd=13r3r3r3r5l1&npa=0&frm=0&tag_exp=115938466~115938469~118897920~118897930~119773331~119896803",
+    "method": "POST",
+    "headers": {
+      "sec-ch-ua": "\"HeadlessChrome\";v=\"123\", \"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"123\"",
+      "referer": "https://info.lubricants.mobil.ca/",
+      "sec-ch-ua-mobile": "?0",
+      "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/123.0.6312.4 Safari/537.36",
+      "sec-ch-ua-platform": "\"Linux\""
+    },
+    "query": {
+      "v": "2",
+      "tid": "G-941JK4VXK3",
+      "cid": "763409110.1784735756",
+      "gtm": "45je67k1h1v878602682z8863654338za20gzb863654338zd863654338",
+      "rcb": "9",
+      "aip": "1",
+      "dma": "0",
+      "gcs": "G111",
+      "gcd": "13r3r3r3r5l1",
+      "npa": "0",
+      "frm": "0",
+      "tag_exp": "115938466~115938469~118897920~118897930~119773331~119896803"
+    },
+    "post_data": null
+  },
+  {
+    "url": "https://px.ads.linkedin.com/collect?v=2&fmt=js&pid=9120570&time=1784735754947&li_adsId=4b7b33ff-c18c-4b54-9255-c39e36886b87&url=https%3A%2F%2Finfo.lubricants.mobil.ca%2Fca-en%2Ffleets%2Fhub%2Fsign-up-for-mobil-lubricant-analysis&cookiesTest=true&liSync=true",
+    "method": "GET",
+    "headers": {
+      "referer": "https://info.lubricants.mobil.ca/",
+      "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/123.0.6312.4 Safari/537.36"
+    },
+    "query": {
+      "v": "2",
+      "fmt": "js",
+      "pid": "9120570",
+      "time": "1784735754947",
+      "li_adsId": "4b7b33ff-c18c-4b54-9255-c39e36886b87",
+      "url": "https://info.lubricants.mobil.ca/ca-en/fleets/hub/sign-up-for-mobil-lubricant-analysis",
+      "cookiesTest": "true",
+      "liSync": "true"
+    },
+    "post_data": null
+  }
+]

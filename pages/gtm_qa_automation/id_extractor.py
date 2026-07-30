@@ -1,0 +1,96 @@
+from urllib.parse import urlparse
+import io
+import re
+import zipfile
+
+import streamlit as st
+from playwright.sync_api import sync_playwright
+
+st.set_page_config(page_title="HTML ID Extractor", page_icon="🔎", layout="wide")
+
+if "results" not in st.session_state:
+    st.session_state.results = {}
+
+def get_filename(url):
+    parsed = urlparse(url)
+    domain = parsed.netloc.replace(".", "_")
+    path = parsed.path.strip("/")
+    if not path:
+        path = "home"
+    else:
+        path = re.sub(r'[<>:"/\\|?* ]', "_", path.replace("/", "_"))
+    return f"{domain}_{path}_ids.txt"
+
+def extract_ids(url):
+    ids=[]
+    with sync_playwright() as p:
+        browser=p.chromium.launch(headless=True,args=["--ignore-certificate-errors"])
+        page=browser.new_page()
+        try:
+            page.goto(url,wait_until="networkidle",timeout=60000)
+            page.wait_for_timeout(3000)
+            loc=page.locator('[id^="link_"]')
+            for i in range(loc.count()):
+                v=loc.nth(i).get_attribute("id")
+                if v:
+                    ids.append(v)
+        finally:
+            browser.close()
+    return sorted(set(ids))
+
+st.title("🔎 HTML ID Extractor")
+st.write(
+    """
+Paste one or more URLs below (one URL per line).
+
+The application will:
+
+- Visit each URL
+- Extract every HTML ID beginning with **link_**
+- Allow preview
+- Generate a separate downloadable text file for each URL
+"""
+)
+#txt=st.text_area("Enter one URL per line",height=200)
+txt = st.text_area(
+    "URLs",
+    height=220,
+    placeholder="""https://example.com
+https://example2.com
+https://example3.com""",
+)
+
+if st.button("🚀 Scrape IDs",type="primary"):
+    urls=[u.strip() for u in txt.splitlines() if u.strip()]
+    st.session_state.results={}
+    prog=st.progress(0)
+    status=st.empty()
+    total = len(urls)
+
+    for i,u in enumerate(urls):
+        #status.info(f"Scraping {u}")
+        status.info(f"Scraping ({i + 1}/{total}) : {u}")
+        try:
+            st.session_state.results[u]={"success":True,"ids":extract_ids(u)}
+        except Exception as e:
+            st.session_state.results[u]={"success":False,"error":str(e)}
+        prog.progress((i+1)/max(len(urls),1))
+    status.success("Finished!")
+
+if st.session_state.results:
+    zipbuf=io.BytesIO()
+    with zipfile.ZipFile(zipbuf,"w",zipfile.ZIP_DEFLATED) as z:
+        for u,r in st.session_state.results.items():
+            if r["success"]:
+                z.writestr(get_filename(u),"\n".join(r["ids"]))
+    zipbuf.seek(0)
+    st.download_button("📦 Download All Text Files",zipbuf,"html_ids.zip","application/zip")
+    st.header("Results")
+    for u,r in st.session_state.results.items():
+        with st.expander(u,expanded=True):
+            if not r["success"]:
+                st.error(r["error"]); continue
+            text="\n".join(r["ids"])
+            st.write(f"**IDs Found:** {len(r['ids'])}")
+            st.text_area("Preview",text,height=300,key=f"p_{u}")
+            st.download_button("📥 Download",text,file_name=get_filename(u),mime="text/plain",key=f"d_{u}")

@@ -1,0 +1,133 @@
+[
+  {
+    "url": "https://px.ads.linkedin.com/collect?v=2&fmt=js&pid=9120570&time=1784739807854&li_adsId=bb7efa57-2fc6-4799-9a31-769ff0749662&url=https%3A%2F%2Finfo.lubricants.mobil.ca%2Fca-fr%2Ffleets%2Fhub%2Fase-collaboration-improvement",
+    "method": "GET",
+    "headers": {
+      "sec-ch-ua": "\"HeadlessChrome\";v=\"123\", \"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"123\"",
+      "referer": "https://info.lubricants.mobil.ca/",
+      "sec-ch-ua-mobile": "?0",
+      "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/123.0.6312.4 Safari/537.36",
+      "sec-ch-ua-platform": "\"Linux\""
+    },
+    "query": {
+      "v": "2",
+      "fmt": "js",
+      "pid": "9120570",
+      "time": "1784739807854",
+      "li_adsId": "bb7efa57-2fc6-4799-9a31-769ff0749662",
+      "url": "https://info.lubricants.mobil.ca/ca-fr/fleets/hub/ase-collaboration-improvement"
+    },
+    "post_data": null
+  },
+  {
+    "url": "https://px.ads.linkedin.com/collect?v=2&fmt=js&pid=9120570&time=1784739807854&li_adsId=bb7efa57-2fc6-4799-9a31-769ff0749662&url=https%3A%2F%2Finfo.lubricants.mobil.ca%2Fca-fr%2Ffleets%2Fhub%2Fase-collaboration-improvement&cookiesTest=true",
+    "method": "GET",
+    "headers": {
+      "referer": "https://info.lubricants.mobil.ca/",
+      "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/123.0.6312.4 Safari/537.36"
+    },
+    "query": {
+      "v": "2",
+      "fmt": "js",
+      "pid": "9120570",
+      "time": "1784739807854",
+      "li_adsId": "bb7efa57-2fc6-4799-9a31-769ff0749662",
+      "url": "https://info.lubricants.mobil.ca/ca-fr/fleets/hub/ase-collaboration-improvement",
+      "cookiesTest": "true"
+    },
+    "post_data": null
+  },
+  {
+    "url": "https://analytics.google.com/g/collect?v=2&tid=G-941JK4VXK3&gtm=45je67l0v878602682z8863654338za20gzb863654338zd863654338&_p=1784739802153&_gaz=1&gcs=G111&gcd=13r3r3r3r5l1&npa=0&dma=0&_eu=AAAAAGA&cid=1405631023.1784739808&frm=0&pscdl=noapi&rcb=7&sr=1280x720&uaa=x86&uab=64&uafvl=HeadlessChrome%3B123.0.6312.4%7CNot%253AA-Brand%3B8.0.0.0%7CChromium%3B123.0.6312.4&uam=&uamb=0&uap=Linux&uapv=5.15.167&uaw=0&ul=en-us&gaf=2&_s=1&tag_exp=115938465~115938468~118897920~118897930~118981136~119773331~119896803&sid=1784739808&sct=1&seg=0&dl=https%3A%2F%2Finfo.lubricants.mobil.ca%2Fca-fr%2Ffleets%2Fhub%2Fase-collaboration-improvement&dt=Comment%20L%E2%80%99Imp%C3%A9riale%20et%20l%E2%80%99Institut%20national%20pour%20l%E2%80%99excellence%20en%20mati%C3%A8re%20de%20services%20automobiles%20s%E2%80%99encouragent%20mutuellement%20%C3%A0%20s%E2%80%99am%C3%A9liorer%20%E2%80%93%20Mobil%20Delvac(MC)&_tu=CA&tfd=8794",
+    "method": "POST",
+    "headers": {
+      "sec-ch-ua": "\"HeadlessChrome\";v=\"123\", \"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"123\"",
+      "sec-ch-ua-platform": "\"Linux\"",
+      "referer": "https://info.lubricants.mobil.ca/",
+      "sec-ch-ua-mobile": "?0",
+      "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/123.0.6312.4 Safari/537.36",
+      "content-type": "text/plain;charset=UTF-8"
+    },
+    "query": {
+      "v": "2",
+      "tid": "G-941JK4VXK3",
+      "gtm": "45je67l0v878602682z8863654338za20gzb863654338zd863654338",
+      "_p": "1784739802153",
+      "_gaz": "1",
+      "gcs": "G111",
+      "gcd": "13r3r3r3r5l1",
+      "npa": "0",
+      "dma": "0",
+      "_eu": "AAAAAGA",
+      "cid": "1405631023.1784739808",
+      "frm": "0",
+      "pscdl": "noapi",
+      "rcb": "7",
+      "sr": "1280x720",
+      "uaa": "x86",
+      "uab": "64",
+      "uafvl": "HeadlessChrome;123.0.6312.4|Not%3AA-Brand;8.0.0.0|Chromium;123.0.6312.4",
+      "uamb": "0",
+      "uap": "Linux",
+      "uapv": "5.15.167",
+      "uaw": "0",
+      "ul": "en-us",
+      "gaf": "2",
+      "_s": "1",
+      "tag_exp": "115938465~115938468~118897920~118897930~118981136~119773331~119896803",
+      "sid": "1784739808",
+      "sct": "1",
+      "seg": "0",
+      "dl": "https://info.lubricants.mobil.ca/ca-fr/fleets/hub/ase-collaboration-improvement",
+      "dt": "Comment L’Impériale et l’Institut national pour l’excellence en matière de services automobiles s’encouragent mutuellement à s’améliorer – Mobil Delvac(MC)",
+      "_tu": "CA",
+      "tfd": "8794"
+    },
+    "post_data": "en=page_view&_fv=1&_nsi=1&_ss=1&ep.gtm_info=GTM-WXRJ44C%7C178&ep.line_of_business=commercial%20lubes&epn.event_timestamp=1784739807636&ep.cookie_status=%2CC0001%2CC0004%2CC0003%2CC0002%2C&ep.cookies_enabled=true&ep.page_category=article&ep.page_subcategory=onhwy%20-%20article%20-%20comment%20l%E2%80%99imp%C3%A9riale%20et%20l%E2%80%99institut%20national%20pour%20l%E2%80%99excellence%20en%20mati%C3%A8re%20de%20services%20automobiles%20s%E2%80%99encouragent%20mutuellement%20%C3%A0%20s%E2%80%99am%C3%A9liorer%20%E2%80%93%20mobil%20delvac(mc)&ep.page_location_clean=https%3A%2F%2Finfo.lubricants.mobil.ca%2Fca-fr%2Ffleets%2Fhub%2Fase-collaboration-improvement&ep.page_referrer_clean=&ep.business_unit=commercial%20lubes&ep.form_name=onhwy%20-%20lead%20form%20-%20standard&ep.form_title=Gardez%20le%20contact%2C%20et%20gardez%20les%20devants%20sur%20les%20derni%C3%A8res%20innovations%20en%20mati%C3%A8re%20de%20lubrification.&ep.user_agent=Mozilla%2F5.0%20(X11%3B%20Linux%20x86_64)%20AppleWebKit%2F537.36%20(KHTML%2C%20like%20Gecko)%20HeadlessChrome%2F123.0.6312.4%20Safari%2F537.36&ep.page_url=https%3A%2F%2Finfo.lubricants.mobil.ca%2Fca-fr%2Ffleets%2Fhub%2Fase-collaboration-improvement&ep.content_grouping=Small%20%2F%20Medium%20Fleets&ep.commercial_sector=On-Highway&epn.site_engagement_value=1&up.journey_stage=Discover"
+  },
+  {
+    "url": "https://stats.g.doubleclick.net/g/collect?v=2&tid=G-941JK4VXK3&cid=1405631023.1784739808&gtm=45je67l0v878602682z8863654338za20gzb863654338zd863654338&rcb=7&aip=1&dma=0&gcs=G111&gcd=13r3r3r3r5l1&npa=0&frm=0&tag_exp=115938465~115938468~118897920~118897930~118981136~119773331~119896803",
+    "method": "POST",
+    "headers": {
+      "sec-ch-ua": "\"HeadlessChrome\";v=\"123\", \"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"123\"",
+      "referer": "https://info.lubricants.mobil.ca/",
+      "sec-ch-ua-mobile": "?0",
+      "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/123.0.6312.4 Safari/537.36",
+      "sec-ch-ua-platform": "\"Linux\""
+    },
+    "query": {
+      "v": "2",
+      "tid": "G-941JK4VXK3",
+      "cid": "1405631023.1784739808",
+      "gtm": "45je67l0v878602682z8863654338za20gzb863654338zd863654338",
+      "rcb": "7",
+      "aip": "1",
+      "dma": "0",
+      "gcs": "G111",
+      "gcd": "13r3r3r3r5l1",
+      "npa": "0",
+      "frm": "0",
+      "tag_exp": "115938465~115938468~118897920~118897930~118981136~119773331~119896803"
+    },
+    "post_data": null
+  },
+  {
+    "url": "https://px.ads.linkedin.com/collect?v=2&fmt=js&pid=9120570&time=1784739807854&li_adsId=bb7efa57-2fc6-4799-9a31-769ff0749662&url=https%3A%2F%2Finfo.lubricants.mobil.ca%2Fca-fr%2Ffleets%2Fhub%2Fase-collaboration-improvement&cookiesTest=true&liSync=true",
+    "method": "GET",
+    "headers": {
+      "referer": "https://info.lubricants.mobil.ca/",
+      "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/123.0.6312.4 Safari/537.36"
+    },
+    "query": {
+      "v": "2",
+      "fmt": "js",
+      "pid": "9120570",
+      "time": "1784739807854",
+      "li_adsId": "bb7efa57-2fc6-4799-9a31-769ff0749662",
+      "url": "https://info.lubricants.mobil.ca/ca-fr/fleets/hub/ase-collaboration-improvement",
+      "cookiesTest": "true",
+      "liSync": "true"
+    },
+    "post_data": null
+  }
+]

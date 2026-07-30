@@ -1,0 +1,152 @@
+[
+  {
+    "url": "https://px.ads.linkedin.com/collect?v=2&fmt=js&pid=9120570&time=1784735793336&li_adsId=8788c748-91f0-4ac2-a4ed-addd29f6874c&url=https%3A%2F%2Finfo.lubricants.mobil.ca%2Fca-en%2Ffleets%2Fhub%2Fcalculate-your-fleet-savings",
+    "method": "GET",
+    "headers": {
+      "sec-ch-ua": "\"HeadlessChrome\";v=\"123\", \"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"123\"",
+      "referer": "https://info.lubricants.mobil.ca/",
+      "sec-ch-ua-mobile": "?0",
+      "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/123.0.6312.4 Safari/537.36",
+      "sec-ch-ua-platform": "\"Linux\""
+    },
+    "query": {
+      "v": "2",
+      "fmt": "js",
+      "pid": "9120570",
+      "time": "1784735793336",
+      "li_adsId": "8788c748-91f0-4ac2-a4ed-addd29f6874c",
+      "url": "https://info.lubricants.mobil.ca/ca-en/fleets/hub/calculate-your-fleet-savings"
+    },
+    "post_data": null
+  },
+  {
+    "url": "https://analytics.google.com/g/collect?v=2&tid=G-941JK4VXK3&gtm=45je67k1v878602682z8863654338za20gzb863654338zd863654338&_p=1784735790146&_gaz=1&gcs=G111&gcd=13r3r3r3r5l1&npa=0&dma=0&_eu=AAAAAGA&cid=1133598122.1784735794&frm=0&pscdl=noapi&rcb=6&sr=1280x720&uaa=x86&uab=64&uafvl=HeadlessChrome%3B123.0.6312.4%7CNot%253AA-Brand%3B8.0.0.0%7CChromium%3B123.0.6312.4&uam=&uamb=0&uap=Linux&uapv=5.15.167&uaw=0&ul=en-us&gaf=2&_s=1&tag_exp=115938465~115938469~118012007~118897920~118897930~119773332~119896803&sid=1784735793&sct=1&seg=0&dl=https%3A%2F%2Finfo.lubricants.mobil.ca%2Fca-en%2Ffleets%2Fhub%2Fcalculate-your-fleet-savings&dt=Mission%3A%20Unstoppable%20Savings%20Navigator%20%E2%80%93%20Mobil%20Delvac%E2%84%A2&_tu=CA&en=page_view&_fv=1&_nsi=1&_ss=1&ep.gtm_info=GTM-WXRJ44C%7C177&ep.line_of_business=commercial%20lubes&epn.event_timestamp=1784735792311&ep.cookie_status=%2CC0001%2CC0004%2CC0003%2CC0002%2C&ep.cookies_enabled=true&ep.page_category=interactive&ep.page_subcategory=onhwy%20-%20intrctv%20-%20mission%3A%20unstoppable%20savings%20navigator%20%E2%80%93%20mobil%20delvac%E2%84%A2&ep.page_location_clean=https%3A%2F%2Finfo.lubricants.mobil.ca%2Fca-en%2Ffleets%2Fhub%2Fcalculate-your-fleet-savings&ep.page_referrer_clean=&ep.business_unit=commercial%20lubes&ep.form_name=onhwy%20-%20lead%20form%20-%20report&ep.user_agent=Mozilla%2F5.0%20(X11%3B%20Linux%20x86_64)%20AppleWebKit%2F537.36%20(KHTML%2C%20like%20Gecko)%20HeadlessChrome%2F123.0.6312.4%20Safari%2F537.36&ep.page_url=https%3A%2F%2Finfo.lubricants.mobil.ca%2Fca-en%2Ffleets%2Fhub%2Fcalculate-your-fleet-savings&ep.content_grouping=Small%20%2F%20Medium%20Fleets&ep.commercial_sector=On-Highway&epn.site_engagement_value=2&up.journey_stage=Evaluate&tfd=8002",
+    "method": "POST",
+    "headers": {
+      "sec-ch-ua": "\"HeadlessChrome\";v=\"123\", \"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"123\"",
+      "referer": "https://info.lubricants.mobil.ca/",
+      "sec-ch-ua-mobile": "?0",
+      "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/123.0.6312.4 Safari/537.36",
+      "sec-ch-ua-platform": "\"Linux\""
+    },
+    "query": {
+      "v": "2",
+      "tid": "G-941JK4VXK3",
+      "gtm": "45je67k1v878602682z8863654338za20gzb863654338zd863654338",
+      "_p": "1784735790146",
+      "_gaz": "1",
+      "gcs": "G111",
+      "gcd": "13r3r3r3r5l1",
+      "npa": "0",
+      "dma": "0",
+      "_eu": "AAAAAGA",
+      "cid": "1133598122.1784735794",
+      "frm": "0",
+      "pscdl": "noapi",
+      "rcb": "6",
+      "sr": "1280x720",
+      "uaa": "x86",
+      "uab": "64",
+      "uafvl": "HeadlessChrome;123.0.6312.4|Not%3AA-Brand;8.0.0.0|Chromium;123.0.6312.4",
+      "uamb": "0",
+      "uap": "Linux",
+      "uapv": "5.15.167",
+      "uaw": "0",
+      "ul": "en-us",
+      "gaf": "2",
+      "_s": "1",
+      "tag_exp": "115938465~115938469~118012007~118897920~118897930~119773332~119896803",
+      "sid": "1784735793",
+      "sct": "1",
+      "seg": "0",
+      "dl": "https://info.lubricants.mobil.ca/ca-en/fleets/hub/calculate-your-fleet-savings",
+      "dt": "Mission: Unstoppable Savings Navigator – Mobil Delvac™",
+      "_tu": "CA",
+      "en": "page_view",
+      "_fv": "1",
+      "_nsi": "1",
+      "_ss": "1",
+      "ep.gtm_info": "GTM-WXRJ44C|177",
+      "ep.line_of_business": "commercial lubes",
+      "epn.event_timestamp": "1784735792311",
+      "ep.cookie_status": ",C0001,C0004,C0003,C0002,",
+      "ep.cookies_enabled": "true",
+      "ep.page_category": "interactive",
+      "ep.page_subcategory": "onhwy - intrctv - mission: unstoppable savings navigator – mobil delvac™",
+      "ep.page_location_clean": "https://info.lubricants.mobil.ca/ca-en/fleets/hub/calculate-your-fleet-savings",
+      "ep.business_unit": "commercial lubes",
+      "ep.form_name": "onhwy - lead form - report",
+      "ep.user_agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/123.0.6312.4 Safari/537.36",
+      "ep.page_url": "https://info.lubricants.mobil.ca/ca-en/fleets/hub/calculate-your-fleet-savings",
+      "ep.content_grouping": "Small / Medium Fleets",
+      "ep.commercial_sector": "On-Highway",
+      "epn.site_engagement_value": "2",
+      "up.journey_stage": "Evaluate",
+      "tfd": "8002"
+    },
+    "post_data": null
+  },
+  {
+    "url": "https://stats.g.doubleclick.net/g/collect?v=2&tid=G-941JK4VXK3&cid=1133598122.1784735794&gtm=45je67k1v878602682z8863654338za20gzb863654338zd863654338&rcb=6&aip=1&dma=0&gcs=G111&gcd=13r3r3r3r5l1&npa=0&frm=0&tag_exp=115938465~115938469~118012007~118897920~118897930~119773332~119896803",
+    "method": "POST",
+    "headers": {
+      "sec-ch-ua": "\"HeadlessChrome\";v=\"123\", \"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"123\"",
+      "referer": "https://info.lubricants.mobil.ca/",
+      "sec-ch-ua-mobile": "?0",
+      "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/123.0.6312.4 Safari/537.36",
+      "sec-ch-ua-platform": "\"Linux\""
+    },
+    "query": {
+      "v": "2",
+      "tid": "G-941JK4VXK3",
+      "cid": "1133598122.1784735794",
+      "gtm": "45je67k1v878602682z8863654338za20gzb863654338zd863654338",
+      "rcb": "6",
+      "aip": "1",
+      "dma": "0",
+      "gcs": "G111",
+      "gcd": "13r3r3r3r5l1",
+      "npa": "0",
+      "frm": "0",
+      "tag_exp": "115938465~115938469~118012007~118897920~118897930~119773332~119896803"
+    },
+    "post_data": null
+  },
+  {
+    "url": "https://px.ads.linkedin.com/collect?v=2&fmt=js&pid=9120570&time=1784735793336&li_adsId=8788c748-91f0-4ac2-a4ed-addd29f6874c&url=https%3A%2F%2Finfo.lubricants.mobil.ca%2Fca-en%2Ffleets%2Fhub%2Fcalculate-your-fleet-savings&cookiesTest=true",
+    "method": "GET",
+    "headers": {
+      "referer": "https://info.lubricants.mobil.ca/",
+      "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/123.0.6312.4 Safari/537.36"
+    },
+    "query": {
+      "v": "2",
+      "fmt": "js",
+      "pid": "9120570",
+      "time": "1784735793336",
+      "li_adsId": "8788c748-91f0-4ac2-a4ed-addd29f6874c",
+      "url": "https://info.lubricants.mobil.ca/ca-en/fleets/hub/calculate-your-fleet-savings",
+      "cookiesTest": "true"
+    },
+    "post_data": null
+  },
+  {
+    "url": "https://px.ads.linkedin.com/collect?v=2&fmt=js&pid=9120570&time=1784735793336&li_adsId=8788c748-91f0-4ac2-a4ed-addd29f6874c&url=https%3A%2F%2Finfo.lubricants.mobil.ca%2Fca-en%2Ffleets%2Fhub%2Fcalculate-your-fleet-savings&cookiesTest=true&liSync=true",
+    "method": "GET",
+    "headers": {
+      "referer": "https://info.lubricants.mobil.ca/",
+      "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/123.0.6312.4 Safari/537.36"
+    },
+    "query": {
+      "v": "2",
+      "fmt": "js",
+      "pid": "9120570",
+      "time": "1784735793336",
+      "li_adsId": "8788c748-91f0-4ac2-a4ed-addd29f6874c",
+      "url": "https://info.lubricants.mobil.ca/ca-en/fleets/hub/calculate-your-fleet-savings",
+      "cookiesTest": "true",
+      "liSync": "true"
+    },
+    "post_data": null
+  }
+]

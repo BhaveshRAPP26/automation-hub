@@ -1,0 +1,153 @@
+[
+  {
+    "url": "https://px.ads.linkedin.com/collect?v=2&fmt=js&pid=9120570&time=1784739836369&li_adsId=d57996dd-3d14-4b03-8c62-c3e537720e05&url=https%3A%2F%2Finfo.lubricants.mobil.ca%2Fca-fr%2Ffleets%2Fhub%2Four-people",
+    "method": "GET",
+    "headers": {
+      "sec-ch-ua": "\"HeadlessChrome\";v=\"123\", \"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"123\"",
+      "referer": "https://info.lubricants.mobil.ca/",
+      "sec-ch-ua-mobile": "?0",
+      "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/123.0.6312.4 Safari/537.36",
+      "sec-ch-ua-platform": "\"Linux\""
+    },
+    "query": {
+      "v": "2",
+      "fmt": "js",
+      "pid": "9120570",
+      "time": "1784739836369",
+      "li_adsId": "d57996dd-3d14-4b03-8c62-c3e537720e05",
+      "url": "https://info.lubricants.mobil.ca/ca-fr/fleets/hub/our-people"
+    },
+    "post_data": null
+  },
+  {
+    "url": "https://analytics.google.com/g/collect?v=2&tid=G-941JK4VXK3&gtm=45je67l0v878602682z8863654338za20gzb863654338zd863654338&_p=1784739832918&_gaz=1&gcs=G111&gcd=13r3r3r3r5l1&npa=0&dma=0&_eu=AAAAAGA&cid=456256392.1784739837&frm=0&pscdl=noapi&rcb=4&sr=1280x720&uaa=x86&uab=64&uafvl=HeadlessChrome%3B123.0.6312.4%7CNot%253AA-Brand%3B8.0.0.0%7CChromium%3B123.0.6312.4&uam=&uamb=0&uap=Linux&uapv=5.15.167&uaw=0&ul=en-us&gaf=2&_s=1&tag_exp=115938466~115938469~117776795~118897920~118897930~118981135~119773332~119896802&sid=1784739836&sct=1&seg=0&dl=https%3A%2F%2Finfo.lubricants.mobil.ca%2Fca-fr%2Ffleets%2Fhub%2Four-people&dt=Les%20personnes%20qui%20rendent%20nos%20produits%20possibles%20%E2%80%93%20Mobil%E2%80%AFDelvac(MC)&_tu=CA&en=page_view&_fv=1&_nsi=1&_ss=1&ep.gtm_info=GTM-WXRJ44C%7C178&ep.line_of_business=commercial%20lubes&epn.event_timestamp=1784739836058&ep.cookie_status=%2CC0001%2CC0004%2CC0003%2CC0002%2C&ep.cookies_enabled=true&ep.page_category=article&ep.page_subcategory=onhwy%20-%20article%20-%20les%20personnes%20qui%20rendent%20nos%20produits%20possibles%20%E2%80%93%20mobil%E2%80%AFdelvac(mc)&ep.page_location_clean=https%3A%2F%2Finfo.lubricants.mobil.ca%2Fca-fr%2Ffleets%2Fhub%2Four-people&ep.page_referrer_clean=&ep.business_unit=commercial%20lubes&ep.form_name=onhwy%20-%20lead%20form%20-%20standard&ep.form_title=Gardez%20le%20contact%2C%20et%20gardez%20les%20devants%20sur%20les%20derni%C3%A8res%20innovations%20en%20mati%C3%A8re%20de%20lubrification.&ep.user_agent=Mozilla%2F5.0%20(X11%3B%20Linux%20x86_64)%20AppleWebKit%2F537.36%20(KHTML%2C%20like%20Gecko)%20HeadlessChrome%2F123.0.6312.4%20Safari%2F537.36&ep.page_url=https%3A%2F%2Finfo.lubricants.mobil.ca%2Fca-fr%2Ffleets%2Fhub%2Four-people&ep.content_grouping=Small%20%2F%20Medium%20Fleets&ep.commercial_sector=On-Highway&epn.site_engagement_value=1&up.journey_stage=Discover&tfd=6671",
+    "method": "POST",
+    "headers": {
+      "sec-ch-ua": "\"HeadlessChrome\";v=\"123\", \"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"123\"",
+      "referer": "https://info.lubricants.mobil.ca/",
+      "sec-ch-ua-mobile": "?0",
+      "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/123.0.6312.4 Safari/537.36",
+      "sec-ch-ua-platform": "\"Linux\""
+    },
+    "query": {
+      "v": "2",
+      "tid": "G-941JK4VXK3",
+      "gtm": "45je67l0v878602682z8863654338za20gzb863654338zd863654338",
+      "_p": "1784739832918",
+      "_gaz": "1",
+      "gcs": "G111",
+      "gcd": "13r3r3r3r5l1",
+      "npa": "0",
+      "dma": "0",
+      "_eu": "AAAAAGA",
+      "cid": "456256392.1784739837",
+      "frm": "0",
+      "pscdl": "noapi",
+      "rcb": "4",
+      "sr": "1280x720",
+      "uaa": "x86",
+      "uab": "64",
+      "uafvl": "HeadlessChrome;123.0.6312.4|Not%3AA-Brand;8.0.0.0|Chromium;123.0.6312.4",
+      "uamb": "0",
+      "uap": "Linux",
+      "uapv": "5.15.167",
+      "uaw": "0",
+      "ul": "en-us",
+      "gaf": "2",
+      "_s": "1",
+      "tag_exp": "115938466~115938469~117776795~118897920~118897930~118981135~119773332~119896802",
+      "sid": "1784739836",
+      "sct": "1",
+      "seg": "0",
+      "dl": "https://info.lubricants.mobil.ca/ca-fr/fleets/hub/our-people",
+      "dt": "Les personnes qui rendent nos produits possibles – Mobil Delvac(MC)",
+      "_tu": "CA",
+      "en": "page_view",
+      "_fv": "1",
+      "_nsi": "1",
+      "_ss": "1",
+      "ep.gtm_info": "GTM-WXRJ44C|178",
+      "ep.line_of_business": "commercial lubes",
+      "epn.event_timestamp": "1784739836058",
+      "ep.cookie_status": ",C0001,C0004,C0003,C0002,",
+      "ep.cookies_enabled": "true",
+      "ep.page_category": "article",
+      "ep.page_subcategory": "onhwy - article - les personnes qui rendent nos produits possibles – mobil delvac(mc)",
+      "ep.page_location_clean": "https://info.lubricants.mobil.ca/ca-fr/fleets/hub/our-people",
+      "ep.business_unit": "commercial lubes",
+      "ep.form_name": "onhwy - lead form - standard",
+      "ep.form_title": "Gardez le contact, et gardez les devants sur les dernières innovations en matière de lubrification.",
+      "ep.user_agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/123.0.6312.4 Safari/537.36",
+      "ep.page_url": "https://info.lubricants.mobil.ca/ca-fr/fleets/hub/our-people",
+      "ep.content_grouping": "Small / Medium Fleets",
+      "ep.commercial_sector": "On-Highway",
+      "epn.site_engagement_value": "1",
+      "up.journey_stage": "Discover",
+      "tfd": "6671"
+    },
+    "post_data": null
+  },
+  {
+    "url": "https://stats.g.doubleclick.net/g/collect?v=2&tid=G-941JK4VXK3&cid=456256392.1784739837&gtm=45je67l0v878602682z8863654338za20gzb863654338zd863654338&rcb=4&aip=1&dma=0&gcs=G111&gcd=13r3r3r3r5l1&npa=0&frm=0&tag_exp=115938466~115938469~117776795~118897920~118897930~118981135~119773332~119896802",
+    "method": "POST",
+    "headers": {
+      "sec-ch-ua": "\"HeadlessChrome\";v=\"123\", \"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"123\"",
+      "referer": "https://info.lubricants.mobil.ca/",
+      "sec-ch-ua-mobile": "?0",
+      "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/123.0.6312.4 Safari/537.36",
+      "sec-ch-ua-platform": "\"Linux\""
+    },
+    "query": {
+      "v": "2",
+      "tid": "G-941JK4VXK3",
+      "cid": "456256392.1784739837",
+      "gtm": "45je67l0v878602682z8863654338za20gzb863654338zd863654338",
+      "rcb": "4",
+      "aip": "1",
+      "dma": "0",
+      "gcs": "G111",
+      "gcd": "13r3r3r3r5l1",
+      "npa": "0",
+      "frm": "0",
+      "tag_exp": "115938466~115938469~117776795~118897920~118897930~118981135~119773332~119896802"
+    },
+    "post_data": null
+  },
+  {
+    "url": "https://px.ads.linkedin.com/collect?v=2&fmt=js&pid=9120570&time=1784739836369&li_adsId=d57996dd-3d14-4b03-8c62-c3e537720e05&url=https%3A%2F%2Finfo.lubricants.mobil.ca%2Fca-fr%2Ffleets%2Fhub%2Four-people&cookiesTest=true",
+    "method": "GET",
+    "headers": {
+      "referer": "https://info.lubricants.mobil.ca/",
+      "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/123.0.6312.4 Safari/537.36"
+    },
+    "query": {
+      "v": "2",
+      "fmt": "js",
+      "pid": "9120570",
+      "time": "1784739836369",
+      "li_adsId": "d57996dd-3d14-4b03-8c62-c3e537720e05",
+      "url": "https://info.lubricants.mobil.ca/ca-fr/fleets/hub/our-people",
+      "cookiesTest": "true"
+    },
+    "post_data": null
+  },
+  {
+    "url": "https://px.ads.linkedin.com/collect?v=2&fmt=js&pid=9120570&time=1784739836369&li_adsId=d57996dd-3d14-4b03-8c62-c3e537720e05&url=https%3A%2F%2Finfo.lubricants.mobil.ca%2Fca-fr%2Ffleets%2Fhub%2Four-people&cookiesTest=true&liSync=true",
+    "method": "GET",
+    "headers": {
+      "referer": "https://info.lubricants.mobil.ca/",
+      "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/123.0.6312.4 Safari/537.36"
+    },
+    "query": {
+      "v": "2",
+      "fmt": "js",
+      "pid": "9120570",
+      "time": "1784739836369",
+      "li_adsId": "d57996dd-3d14-4b03-8c62-c3e537720e05",
+      "url": "https://info.lubricants.mobil.ca/ca-fr/fleets/hub/our-people",
+      "cookiesTest": "true",
+      "liSync": "true"
+    },
+    "post_data": null
+  }
+]

@@ -2,7 +2,7 @@ from urllib.parse import urlparse
 import io
 import re
 import zipfile
-
+import pandas as pd
 import streamlit as st
 from playwright.sync_api import sync_playwright
 
@@ -37,6 +37,66 @@ def extract_ids(url):
         finally:
             browser.close()
     return sorted(set(ids))
+
+
+
+
+def categorize_ids(ids):
+    """
+    Categorize IDs into Header, Footer and Body.
+    """
+
+    rows = []
+
+    for id_value in ids:
+
+        id_lower = id_value.lower()
+
+        if "link_header" in id_lower or "link_nav" in id_lower:
+            category = "Header"
+
+        elif "link_footer" in id_lower:
+            category = "Footer"
+
+        elif "link_btn_submit" in id_lower:
+            category = "Form"
+
+        else:
+            category = "Body"
+
+        rows.append({
+            "Category": category,
+            "ID": id_value
+        })
+
+    df = pd.DataFrame(rows)
+
+    # Sort by category then ID
+    category_order = {
+        "Header": 0,
+        "Body": 1,
+        "Form": 2,
+        "Footer": 3
+    }
+
+    df["Sort"] = df["Category"].map(category_order)
+
+    df = (
+        df.sort_values(["Sort", "ID"])
+          .drop(columns="Sort")
+          .reset_index(drop=True)
+    )
+
+    return df
+
+
+
+
+
+
+
+
+
 
 st.title("🔎 HTML ID Extractor")
 st.write(
@@ -90,7 +150,30 @@ if st.session_state.results:
         with st.expander(u,expanded=True):
             if not r["success"]:
                 st.error(r["error"]); continue
-            text="\n".join(r["ids"])
+            text = "\n".join(r["ids"])
+
             st.write(f"**IDs Found:** {len(r['ids'])}")
-            st.text_area("Preview",text,height=300,key=f"p_{u}")
-            st.download_button("📥 Download",text,file_name=get_filename(u),mime="text/plain",key=f"d_{u}")
+
+            # -------------------------------
+            # Display grouped table
+            # -------------------------------
+
+            df = categorize_ids(r["ids"])
+
+            st.dataframe(
+                df,
+                use_container_width=True,
+                hide_index=True
+            )
+
+            # -------------------------------
+            # Download button
+            # -------------------------------
+
+            st.download_button(
+                "📥 Download",
+                text,
+                file_name=get_filename(u),
+                mime="text/plain",
+                key=f"d_{u}"
+            )

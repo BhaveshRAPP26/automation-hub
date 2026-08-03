@@ -17,7 +17,7 @@ if "results" not in st.session_state:
 
 with st.spinner("Installing Chromium dependencies..."):
     try:
-        subprocess.run(["playwright", "install", "chromium"], check=True)
+        subprocess.run(["playwright", "install"], check=True)
     except Exception:
         st.text("Error installing Playwright Chromium dependencies. Please ensure you have Playwright installed and try again.")
 

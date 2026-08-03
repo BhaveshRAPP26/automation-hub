@@ -4,12 +4,15 @@ import re
 import zipfile
 import pandas as pd
 import streamlit as st
-from playwright.sync_api import sync_playwright
+import requests
+
 
 st.set_page_config(page_title="HTML ID Extractor", page_icon="🔎", layout="wide")
 
 if "results" not in st.session_state:
     st.session_state.results = {}
+
+
 
 def get_filename(url):
     parsed = urlparse(url)
@@ -22,20 +25,35 @@ def get_filename(url):
     return f"{domain}_{path}_ids.txt"
 
 def extract_ids(url):
-    ids=[]
-    with sync_playwright() as p:
-        browser=p.chromium.launch(headless=True,args=["--ignore-certificate-errors"])
-        page=browser.new_page()
-        try:
-            page.goto(url,wait_until="networkidle",timeout=60000)
-            page.wait_for_timeout(3000)
-            loc=page.locator('[id^="link_"]')
-            for i in range(loc.count()):
-                v=loc.nth(i).get_attribute("id")
-                if v:
-                    ids.append(v)
-        finally:
-            browser.close()
+    """
+    Downloads the HTML and extracts IDs beginning with 'link_' using regex.
+    """
+
+    headers = {
+        "User-Agent": (
+            "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+            "AppleWebKit/537.36 (KHTML, like Gecko) "
+            "Chrome/138.0.0.0 Safari/537.36"
+        )
+    }
+
+    response = requests.get(
+        url,
+        headers=headers,
+        timeout=6000
+    )
+
+    response.raise_for_status()
+
+    html = response.text
+
+    # Match IDs beginning with link_
+    ids = re.findall(
+        r'id\s*=\s*["\'](link_[^"\']+)["\']',
+        html,
+        flags=re.IGNORECASE
+    )
+
     return sorted(set(ids))
 
 

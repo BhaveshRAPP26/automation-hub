@@ -6,5 +6,4 @@ rich
 streamlit_authenticator
 pyYAML
 openpyxl
-playwright
-subprocess
+playwright==1.49.0

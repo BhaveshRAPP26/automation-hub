@@ -4,12 +4,21 @@ import re
 import zipfile
 import pandas as pd
 import streamlit as st
+import os
 from playwright.sync_api import sync_playwright
 
 st.set_page_config(page_title="HTML ID Extractor", page_icon="🔎", layout="wide")
 
 if "results" not in st.session_state:
     st.session_state.results = {}
+
+
+# Check if Playwright browsers are already installed to avoid re-installing on every rerun
+if not os.path.exists("/home/appuser/.cache/ms-playwright"):
+    with st.spinner("Installing Chromium dependencies..."):
+        os.system("playwright install chromium")
+
+
 
 def get_filename(url):
     parsed = urlparse(url)

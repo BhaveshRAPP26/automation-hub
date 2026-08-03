@@ -6,3 +6,4 @@ rich
 streamlit_authenticator
 pyYAML
 openpyxl
+playwright

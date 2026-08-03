@@ -4,10 +4,7 @@ import re
 import zipfile
 import pandas as pd
 import streamlit as st
-import os
 from playwright.sync_api import sync_playwright
-
-os.system("playwright install")
 
 st.set_page_config(page_title="HTML ID Extractor", page_icon="🔎", layout="wide")
 

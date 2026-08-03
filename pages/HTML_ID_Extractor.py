@@ -4,7 +4,6 @@ import re
 import zipfile
 import pandas as pd
 import streamlit as st
-import os
 import subprocess
 from playwright.sync_api import sync_playwright
 
@@ -15,13 +14,12 @@ if "results" not in st.session_state:
 
 
 # Check if Playwright browsers are already installed to avoid re-installing on every rerun
-if not os.path.exists("/home/appuser/.cache/ms-playwright"):
-    with st.spinner("Installing Chromium dependencies..."):
-        try:
-            subprocess.run(["playwright", "install", "chromium"], check=True)
-        except Exception:
-            # fallback to os.system for environments where subprocess may fail
-            os.system("playwright install chromium")
+
+with st.spinner("Installing Chromium dependencies..."):
+    try:
+        subprocess.run(["playwright", "install", "chromium"], check=True)
+    except Exception:
+        st.text("Error installing Playwright Chromium dependencies. Please ensure you have Playwright installed and try again.")
 
 
 

@@ -5,6 +5,7 @@ import zipfile
 import pandas as pd
 import streamlit as st
 import os
+import subprocess
 from playwright.sync_api import sync_playwright
 
 st.set_page_config(page_title="HTML ID Extractor", page_icon="🔎", layout="wide")
@@ -16,7 +17,11 @@ if "results" not in st.session_state:
 # Check if Playwright browsers are already installed to avoid re-installing on every rerun
 if not os.path.exists("/home/appuser/.cache/ms-playwright"):
     with st.spinner("Installing Chromium dependencies..."):
-        os.system("playwright install chromium")
+        try:
+            subprocess.run(["playwright", "install", "chromium"], check=True)
+        except Exception:
+            # fallback to os.system for environments where subprocess may fail
+            os.system("playwright install chromium")
 
 
 

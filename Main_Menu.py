@@ -1,7 +1,5 @@
 import streamlit as st
-import subprocess
 
-subprocess.run(["playwright", "install"], check=True)
 
 st.set_page_config(
     page_title="Hello",

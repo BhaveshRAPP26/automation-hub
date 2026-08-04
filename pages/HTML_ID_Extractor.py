@@ -24,7 +24,13 @@ def get_filename(url):
 def extract_ids(url):
     ids=[]
     with sync_playwright() as p:
-        browser=p.chromium.launch(headless=True,args=["--ignore-certificate-errors"])
+        #browser=p.chromium.launch(headless=True,args=["--ignore-certificate-errors"])
+
+        browser = p.chromium.launch(headless=True,args=["--no-sandbox","--disable-dev-shm-usage","--disable-gpu","--ignore-certificate-errors",],)
+
+
+
+
         page=browser.new_page()
         try:
             page.goto(url,wait_until="networkidle",timeout=60000)

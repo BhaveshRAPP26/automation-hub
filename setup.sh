@@ -1,3 +1,0 @@
-playwright install
-playwright install chromium
-playwright install-deps

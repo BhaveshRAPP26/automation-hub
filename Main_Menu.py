@@ -1,4 +1,7 @@
 import streamlit as st
+import os
+
+os.system("playwright install")
 
 st.set_page_config(
     page_title="Hello",

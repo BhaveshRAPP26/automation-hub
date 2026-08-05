@@ -47,10 +47,16 @@ class OneTrustQARunner:
 
 
 
+
+    def begin_step(self, step):
+
+        self.browser.start_step(step)
+
+        self.capture_state()
+
     ########################################################
     # Add result
     ########################################################
-
 
     def add_result(
         self,
@@ -62,59 +68,48 @@ class OneTrustQARunner:
         notes=""
     ):
 
+        current_requests = self.browser.step_requests()
 
-        self.results.append(
+        ga_events = ", ".join(
+            [r["event"] for r in current_requests]
+        )
 
-            {
+        self.results.append({
 
-            "url":
-                self.url,
+            "url_tested": self.url,
 
+            "current_url": self.browser.current_url(),
 
-            "step":
-                step,
+            "step": step,
 
+            "action": action,
 
-            "action":
-                action,
+            "expected": expected,
 
-
-            "expected":
-                expected,
-
-
-            "actual":
-                actual,
-
+            "actual": actual,
 
             "active_groups":
                 self.datalayer.latest_onetrust_groups(),
 
-
             "ga_event":
-                self.browser.latest_event(),
+                ga_events,
 
+            "ga_request_count":
+                len(current_requests),
 
             "ga_requests":
-                self.browser.request_count(),
-
+                current_requests,
 
             "status":
                 status(passed),
 
-
             "notes":
                 notes,
 
-
             "timestamp":
-                datetime.now().strftime(
-                    "%Y-%m-%d %H:%M:%S"
-                )
+                datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
-            }
-
-        )
+        })
 
 
 
@@ -215,7 +210,8 @@ class OneTrustQARunner:
             self.browser.disable_navigation()
 
 
-            self.browser.clear_requests()
+            self.begin_step(2)
+
 
 
             try:
@@ -235,8 +231,9 @@ class OneTrustQARunner:
 
                     "No navigation. DataLayer updated",
 
-                    self.datalayer
-                    .latest_onetrust_groups(),
+                    f"{self.browser.current_url()} | "
+                    f"Groups={self.datalayer.latest_onetrust_groups()} | "
+                    f"GA4={self.browser.latest_event()}",
 
                     True
 
@@ -275,7 +272,7 @@ class OneTrustQARunner:
             ################################################
 
 
-            self.browser.clear_requests()
+            self.begin_step(3)
 
 
             ot = OneTrustHelper(
@@ -329,7 +326,7 @@ class OneTrustQARunner:
             ################################################
 
 
-            self.browser.clear_requests()
+            self.begin_step(4)
 
 
             try:
@@ -351,11 +348,11 @@ class OneTrustQARunner:
 
                     "GA4 request expected",
 
-                    self.browser.latest_event(),
+                    f"{self.browser.current_url()} | "
+                    f"Groups={self.datalayer.latest_onetrust_groups()} | "
+                    f"GA4={self.browser.latest_event()}",
 
-                    self.browser.request_count()
-                    >
-                    0
+                    self.browser.request_count() > 0
 
                 )
 
@@ -389,7 +386,7 @@ class OneTrustQARunner:
             self.browser.enable_navigation()
 
 
-            self.browser.clear_requests()
+            self.begin_step(5)
 
 
             navigated = (
@@ -413,16 +410,15 @@ class OneTrustQARunner:
 
                 5,
 
-                "Same domain navigation",
+                "Navigate to same-domain page",
 
                 "GA4 page_view expected",
 
-                self.browser.latest_event(),
+                f"{self.browser.current_url()} | {self.browser.latest_event()}",
 
                 navigated and pageview
 
             )
-
 
 
             self.screenshot(
@@ -435,6 +431,7 @@ class OneTrustQARunner:
             # STEP 6
             ################################################
 
+            self.begin_step(6)
 
             rejected = (
                 ot.reject_all_console()
@@ -479,7 +476,7 @@ class OneTrustQARunner:
             self.browser.disable_navigation()
 
 
-            self.browser.clear_requests()
+            self.begin_step(7)
 
 
             try:
@@ -508,7 +505,9 @@ class OneTrustQARunner:
 
                     "No GA4 request",
 
-                    self.browser.latest_event(),
+                    f"{self.browser.current_url()} | "
+                    f"Groups={self.datalayer.latest_onetrust_groups()} | "
+                    f"GA4={self.browser.latest_event()}",
 
                     no_request
 
@@ -544,7 +543,7 @@ class OneTrustQARunner:
             self.browser.enable_navigation()
 
 
-            self.browser.clear_requests()
+            self.begin_step(8)
 
 
             self.browser.navigate_same_domain()
@@ -567,11 +566,11 @@ class OneTrustQARunner:
 
                 8,
 
-                "Navigation after rejection",
+                "Navigate after Reject All",
 
-                "No GA4 page_view",
+               "No page_view",
 
-                self.browser.latest_event(),
+                f"{self.browser.current_url()} | {self.browser.latest_event()}",
 
                 no_pageview
 

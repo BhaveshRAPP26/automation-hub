@@ -22,7 +22,6 @@ from utils import filename_timestamp
 # Convert results to dataframe
 ############################################################
 
-
 def results_to_dataframe(results):
 
     rows = []
@@ -31,52 +30,104 @@ def results_to_dataframe(results):
 
         rows.append({
 
-            "URL": r.get("url", ""),
+            "Test URL":
+                r.get("url_tested", ""),
 
-            "Step": r.get("step", ""),
+            "Current URL":
+                r.get("current_url", ""),
 
-            "Action": r.get("action", ""),
+            "Step":
+                r.get("step", ""),
 
-            "Expected": r.get("expected", ""),
+            "Action":
+                r.get("action", ""),
 
-            "Actual": r.get("actual", ""),
+            "Expected":
+                r.get("expected", ""),
 
-            "Active Groups": r.get(
-                "active_groups",
-                ""
-            ),
+            "Actual":
+                r.get("actual", ""),
 
-            "GA4 Event": r.get(
-                "ga_event",
-                ""
-            ),
+            "OnetrustActiveGroups":
+                r.get("active_groups", ""),
 
-            "GA4 Requests": r.get(
-                "ga_requests",
-                0
-            ),
+            "GA4 Event(s)":
+                r.get("ga_event", ""),
 
-            "Status": r.get(
-                "status",
-                ""
-            ),
+            "GA4 Request Count":
+                r.get("ga_request_count", 0),
 
-            "Notes": r.get(
-                "notes",
-                ""
-            ),
+            "Status":
+                r.get("status", ""),
 
-            "Timestamp": r.get(
-                "timestamp",
-                ""
-            )
+            "Notes":
+                r.get("notes", ""),
+
+            "Timestamp":
+                r.get("timestamp", "")
 
         })
-
 
     return pd.DataFrame(rows)
 
 
+def ga4_dataframe(results):
+
+    rows = []
+
+    for result in results:
+
+        requests = result.get("ga_requests", [])
+
+        for req in requests:
+
+            rows.append({
+
+                "Test URL":
+                    result.get("url_tested", ""),
+
+                "Current URL":
+                    result.get("current_url", ""),
+
+                "QA Step":
+                    result.get("step", ""),
+
+                "Timestamp":
+                    req.get("timestamp", ""),
+
+                "Event":
+                    req.get("event", ""),
+
+                "Measurement ID":
+                    req.get("measurement_id", ""),
+
+                "Client ID":
+                    req.get("client_id", ""),
+
+                "Session ID":
+                    req.get("session_id", ""),
+
+                "Page URL":
+                    req.get("page_url", ""),
+
+                "Page Title":
+                    req.get("page_title", ""),
+
+                "Referrer":
+                    req.get("referrer", ""),
+
+                "Consent GCS":
+                    req.get("consent_gcs", ""),
+
+                "Consent GCD":
+                    req.get("consent_gcd", ""),
+
+                "Full Request":
+                    req.get("url", "")
+
+            })
+
+    return pd.DataFrame(rows)
 
 ############################################################
 # Summary
@@ -90,45 +141,48 @@ def create_summary(results):
 
     summary = {
 
+    "URLs Tested":
 
-        "Total Steps":
-            len(df),
+        df["Test URL"].nunique(),
 
+    "Total Steps":
 
-        "Passed":
+        len(df),
+
+    "Passed":
+
+        len(
+            df[
+                df["Status"]=="PASS"
+            ]
+        ),
+
+    "Failed":
+
+        len(
+            df[
+                df["Status"]=="FAIL"
+            ]
+        ),
+
+    "Pass Rate":
+
+        round(
             len(
                 df[
                     df["Status"]=="PASS"
                 ]
-            ),
-
-
-        "Failed":
-            len(
-                df[
-                    df["Status"]=="FAIL"
-                ]
-            ),
-
-
-        "Pass Rate":
-
-            (
-                round(
-                    len(
-                        df[
-                            df["Status"]=="PASS"
-                        ]
-                    )
-                    /
-                    len(df)
-                    *
-                    100,
-                    2
-                )
-                if len(df)
-                else 0
             )
+            /
+            len(df)
+            *
+            100,
+            2
+        )
+
+        if len(df)
+
+        else 0
 
     }
 
@@ -159,10 +213,11 @@ def generate_excel(results):
     )
 
 
+    summary = create_summary(results)
+
     df = results_to_dataframe(results)
 
-
-    summary = create_summary(results)
+    ga_df = ga4_dataframe(results)
 
 
 
@@ -183,6 +238,16 @@ def generate_excel(results):
             writer,
             sheet_name="QA Steps",
             index=False
+        )
+
+        ga_df.to_excel(
+
+            writer,
+
+            sheet_name="GA4 Requests",
+
+            index=False
+
         )
 
 
@@ -335,6 +400,16 @@ Generated:
     html += df.to_html(
         index=False,
         classes="table"
+    )
+
+    ga_df = ga4_dataframe(results)
+
+    html += "<br><br>"
+
+    html += "<h2>GA4 Requests</h2>"
+
+    html += ga_df.to_html(
+        index=False
     )
 
 

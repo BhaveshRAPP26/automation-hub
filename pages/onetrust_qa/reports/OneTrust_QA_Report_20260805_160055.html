@@ -1,0 +1,220 @@
+
+<html>
+
+<head>
+
+<title>
+OneTrust Consent QA Report
+</title>
+
+
+<style>
+
+body {
+
+font-family: Arial;
+
+}
+
+
+table {
+
+border-collapse: collapse;
+
+width:100%;
+
+}
+
+
+th {
+
+background:#333;
+
+color:white;
+
+padding:8px;
+
+}
+
+
+td {
+
+border:1px solid #ddd;
+
+padding:8px;
+
+}
+
+
+</style>
+
+
+</head>
+
+
+<body>
+
+
+<h1>
+OneTrust Consent Mode QA Report
+</h1>
+
+
+<p>
+Generated:
+2026-08-05 16:00:55.063569
+</p>
+
+
+<table border="1" class="dataframe table">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Test URL</th>
+      <th>Current URL</th>
+      <th>Step</th>
+      <th>Action</th>
+      <th>Expected</th>
+      <th>Actual</th>
+      <th>OnetrustActiveGroups</th>
+      <th>GA4 Event(s)</th>
+      <th>GA4 Request Count</th>
+      <th>Status</th>
+      <th>Notes</th>
+      <th>Timestamp</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>https://us.lubricants.mobil.com/fleets/hub</td>
+      <td>https://us.lubricants.mobil.com/fleets/hub</td>
+      <td>1</td>
+      <td>Page Load</td>
+      <td>OneTrustGroupsUpdated + GA4 page_view</td>
+      <td>,C0001,C0003,SSPD_BG,C0004,C0002, | page_view</td>
+      <td>,C0001,C0003,SSPD_BG,C0004,C0002,</td>
+      <td>page_view, page_view</td>
+      <td>2</td>
+      <td>PASS</td>
+      <td></td>
+      <td>2026-08-05 16:00:46</td>
+    </tr>
+    <tr>
+      <td>https://us.lubricants.mobil.com/fleets/hub</td>
+      <td>https://us.lubricants.mobil.com/fleets/hub</td>
+      <td>2</td>
+      <td>Click link_ element</td>
+      <td>No navigation. DataLayer updated</td>
+      <td>https://us.lubricants.mobil.com/fleets/hub | Groups=,C0001,C0003,SSPD_BG,C0004,C0002, | GA4=page_view</td>
+      <td>,C0001,C0003,SSPD_BG,C0004,C0002,</td>
+      <td></td>
+      <td>0</td>
+      <td>PASS</td>
+      <td></td>
+      <td>2026-08-05 16:00:50</td>
+    </tr>
+    <tr>
+      <td>https://us.lubricants.mobil.com/fleets/hub</td>
+      <td>https://us.lubricants.mobil.com/fleets/hub</td>
+      <td>ERROR</td>
+      <td>Execution</td>
+      <td>Complete execution</td>
+      <td></td>
+      <td>,C0001,C0003,SSPD_BG,C0004,C0002,</td>
+      <td>,</td>
+      <td>2</td>
+      <td>FAIL</td>
+      <td>'GA4Collector' object has no attribute 'count'</td>
+      <td>2026-08-05 16:00:54</td>
+    </tr>
+  </tbody>
+</table><br><br><h2>GA4 Requests</h2><table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Test URL</th>
+      <th>Current URL</th>
+      <th>QA Step</th>
+      <th>Timestamp</th>
+      <th>Event</th>
+      <th>Measurement ID</th>
+      <th>Client ID</th>
+      <th>Session ID</th>
+      <th>Page URL</th>
+      <th>Page Title</th>
+      <th>Referrer</th>
+      <th>Consent GCS</th>
+      <th>Consent GCD</th>
+      <th>Full Request</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>https://us.lubricants.mobil.com/fleets/hub</td>
+      <td>https://us.lubricants.mobil.com/fleets/hub</td>
+      <td>1</td>
+      <td>16:00:30.860</td>
+      <td>page_view</td>
+      <td>G-5KYQ407380</td>
+      <td>329081807.1785931231</td>
+      <td>1785931230</td>
+      <td>https://us.lubricants.mobil.com/fleets/hub</td>
+      <td>On Highway Fleets and Trucking Insights - Mobil Delvac™</td>
+      <td></td>
+      <td>G111</td>
+      <td>13r3r3r3r5l1</td>
+      <td>https://analytics.google.com/g/collect?v=2&amp;tid=G-5KYQ407380&amp;gtm=45je6831v876507587z8863654338za20gzb863654338zd863654338&amp;_p=1785931226228&amp;_gaz=1&amp;gcs=G111&amp;gcd=13r3r3r3r5l1&amp;npa=0&amp;dma=0&amp;_eu=AAAAAGA&amp;cid=329081807.1785931231&amp;frm=0&amp;pscdl=noapi&amp;rcb=16&amp;sr=1280x720&amp;uaa=x86&amp;uab=64&amp;uafvl=Chromium%3B123.0.6312.4%7CNot%253AA-Brand%3B8.0.0.0&amp;uam=&amp;uamb=0&amp;uap=Linux&amp;uapv=5.15.167&amp;uaw=0&amp;ul=en-us&amp;gaf=2&amp;_s=1&amp;tag_exp=115938465~115938468~118897920~118897930~119896802&amp;sid=1785931230&amp;sct=1&amp;seg=0&amp;dl=https%3A%2F%2Fus.lubricants.mobil.com%2Ffleets%2Fhub&amp;dt=On%20Highway%20Fleets%20and%20Trucking%20Insights%20-%20Mobil%20Delvac%E2%84%A2&amp;_tu=CA&amp;en=page_view&amp;_fv=1&amp;_nsi=1&amp;_ss=1&amp;ep.gtm_info=GTM-WXRJ44C%7C180&amp;ep.line_of_business=commercial%20lubes&amp;epn.event_timestamp=1785931229592&amp;ep.cookie_status=%2CC0001%2CC0003%2CSSPD_BG%2CC0004%2CC0002%2C&amp;ep.cookies_enabled=true&amp;ep.page_category=homepage&amp;ep.page_subcategory=onhwy%20-%20home%20-%20on%20highway%20fleets%20and%20trucking%20insights%20-%20mobil%20delvac%E2%84%A2&amp;ep.page_location_clean=https%3A%2F%2Fus.lubricants.mobil.com%2Ffleets%2Fhub&amp;ep.page_referrer_clean=&amp;ep.business_unit=commercial%20lubes&amp;ep.form_name=onhwy%20-%20lead%20form%20-%20standard&amp;ep.form_title=Ready%20to%20start%20the%20conversation%3F&amp;ep.user_agent=Mozilla%2F5.0%20(X11%3B%20Linux%20x86_64)%20AppleWebKit%2F537.36%20(KHTML%2C%20like%20Gecko)%20Chrome%2F123.0.0.0%20Safari%2F537.36&amp;ep.page_url=https%3A%2F%2Fus.lubricants.mobil.com%2Ffleets%2Fhub&amp;ep.content_grouping=Small%20%2F%20Medium%20Fleets&amp;ep.commercial_sector=On-Highway&amp;epn.site_engagement_value=1&amp;up.journey_stage=Discover&amp;tfd=12296</td>
+    </tr>
+    <tr>
+      <td>https://us.lubricants.mobil.com/fleets/hub</td>
+      <td>https://us.lubricants.mobil.com/fleets/hub</td>
+      <td>1</td>
+      <td>16:00:30.963</td>
+      <td>page_view</td>
+      <td>G-KGTZCWZ5LV</td>
+      <td>329081807.1785931231</td>
+      <td>1785931230</td>
+      <td>https://us.lubricants.mobil.com/fleets/hub</td>
+      <td>On Highway Fleets and Trucking Insights - Mobil Delvac™</td>
+      <td></td>
+      <td>G111</td>
+      <td>13r3r3r3r5l1</td>
+      <td>https://analytics.google.com/g/collect?v=2&amp;tid=G-KGTZCWZ5LV&amp;gtm=45je6831v9176016575z8863654338za20gzb863654338zd863654338&amp;_p=1785931226228&amp;_gaz=1&amp;gcs=G111&amp;gcd=13r3r3r3r5l1&amp;npa=0&amp;dma=0&amp;_eu=AAAAAGA&amp;cid=329081807.1785931231&amp;frm=0&amp;pscdl=noapi&amp;rcb=4&amp;sr=1280x720&amp;uaa=x86&amp;uab=64&amp;uafvl=Chromium%3B123.0.6312.4%7CNot%253AA-Brand%3B8.0.0.0&amp;uam=&amp;uamb=0&amp;uap=Linux&amp;uapv=5.15.167&amp;uaw=0&amp;ul=en-us&amp;gaf=2&amp;_s=1&amp;tag_exp=115616986~115938465~115938468~118897920~118897930~119896802&amp;sid=1785931230&amp;sct=1&amp;seg=0&amp;dl=https%3A%2F%2Fus.lubricants.mobil.com%2Ffleets%2Fhub&amp;dt=On%20Highway%20Fleets%20and%20Trucking%20Insights%20-%20Mobil%20Delvac%E2%84%A2&amp;_tu=CA&amp;en=page_view&amp;_fv=1&amp;_ss=1&amp;ep.gtm_info=GTM-WXRJ44C%7C180&amp;ep.line_of_business=commercial%20lubes&amp;epn.event_timestamp=1785931229645&amp;ep.cookie_status=%2CC0001%2CC0003%2CSSPD_BG%2CC0004%2CC0002%2C&amp;ep.cookies_enabled=true&amp;ep.page_category=homepage&amp;ep.page_subcategory=onhwy%20-%20home%20-%20on%20highway%20fleets%20and%20trucking%20insights%20-%20mobil%20delvac%E2%84%A2&amp;ep.page_location_clean=https%3A%2F%2Fus.lubricants.mobil.com%2Ffleets%2Fhub&amp;ep.page_referrer_clean=&amp;ep.business_unit=commercial%20lubes&amp;ep.form_name=onhwy%20-%20lead%20form%20-%20standard&amp;ep.form_title=Ready%20to%20start%20the%20conversation%3F&amp;ep.user_agent=Mozilla%2F5.0%20(X11%3B%20Linux%20x86_64)%20AppleWebKit%2F537.36%20(KHTML%2C%20like%20Gecko)%20Chrome%2F123.0.0.0%20Safari%2F537.36&amp;ep.page_url=https%3A%2F%2Fus.lubricants.mobil.com%2Ffleets%2Fhub&amp;ep.content_grouping=Small%20%2F%20Medium%20Fleets&amp;ep.commercial_sector=On-Highway&amp;epn.site_engagement_value=1&amp;up.journey_stage=Discover&amp;tfd=12438</td>
+    </tr>
+    <tr>
+      <td>https://us.lubricants.mobil.com/fleets/hub</td>
+      <td>https://us.lubricants.mobil.com/fleets/hub</td>
+      <td>ERROR</td>
+      <td>16:00:54.062</td>
+      <td></td>
+      <td>G-5KYQ407380</td>
+      <td>329081807.1785931231</td>
+      <td>1785931230</td>
+      <td>https://us.lubricants.mobil.com/fleets/hub</td>
+      <td>on highway fleets and trucking insights - mobil delvac™</td>
+      <td></td>
+      <td>G111</td>
+      <td>13r3r3r3r5l1</td>
+      <td>https://analytics.google.com/g/collect?v=2&amp;tid=G-5KYQ407380&amp;gtm=45je6831v876507587z8863654338za20gzb863654338zd863654338&amp;_p=1785931226228&amp;gcs=G111&amp;gcd=13r3r3r3r5l1&amp;npa=0&amp;dma=0&amp;_eu=AAAAAGQ&amp;cid=329081807.1785931231&amp;frm=0&amp;pscdl=noapi&amp;rcb=16&amp;sr=1280x720&amp;uaa=x86&amp;uab=64&amp;uafvl=Chromium%3B123.0.6312.4%7CNot%253AA-Brand%3B8.0.0.0&amp;uam=&amp;uamb=0&amp;uap=Linux&amp;uapv=5.15.167&amp;uaw=0&amp;ul=en-us&amp;gaf=2&amp;_s=2&amp;tag_exp=115938465~115938468~118897920~118897930~119896802&amp;dt=on%20highway%20fleets%20and%20trucking%20insights%20-%20mobil%20delvac%E2%84%A2&amp;dp=%2Ffleets%2Fhub&amp;sid=1785931230&amp;sct=1&amp;seg=1&amp;dl=https%3A%2F%2Fus.lubricants.mobil.com%2Ffleets%2Fhub&amp;_tu=CA&amp;tfd=35538</td>
+    </tr>
+    <tr>
+      <td>https://us.lubricants.mobil.com/fleets/hub</td>
+      <td>https://us.lubricants.mobil.com/fleets/hub</td>
+      <td>ERROR</td>
+      <td>16:00:54.069</td>
+      <td></td>
+      <td>G-KGTZCWZ5LV</td>
+      <td>329081807.1785931231</td>
+      <td>1785931230</td>
+      <td>https://us.lubricants.mobil.com/fleets/hub</td>
+      <td>on highway fleets and trucking insights - mobil delvac™</td>
+      <td></td>
+      <td>G111</td>
+      <td>13r3r3r3r5l1</td>
+      <td>https://analytics.google.com/g/collect?v=2&amp;tid=G-KGTZCWZ5LV&amp;gtm=45je6831v9176016575z8863654338za20gzb863654338zd863654338&amp;_p=1785931226228&amp;gcs=G111&amp;gcd=13r3r3r3r5l1&amp;npa=0&amp;dma=0&amp;_eu=AAAAAGQ&amp;cid=329081807.1785931231&amp;frm=0&amp;pscdl=noapi&amp;rcb=4&amp;sr=1280x720&amp;uaa=x86&amp;uab=64&amp;uafvl=Chromium%3B123.0.6312.4%7CNot%253AA-Brand%3B8.0.0.0&amp;uam=&amp;uamb=0&amp;uap=Linux&amp;uapv=5.15.167&amp;uaw=0&amp;ul=en-us&amp;gaf=2&amp;_s=2&amp;tag_exp=115616986~115938465~115938468~118897920~118897930~119896802&amp;dt=on%20highway%20fleets%20and%20trucking%20insights%20-%20mobil%20delvac%E2%84%A2&amp;dp=%2Ffleets%2Fhub&amp;sid=1785931230&amp;sct=1&amp;seg=1&amp;dl=https%3A%2F%2Fus.lubricants.mobil.com%2Ffleets%2Fhub&amp;_tu=CA&amp;tfd=35549</td>
+    </tr>
+  </tbody>
+</table>
+
+</body>
+
+</html>
+

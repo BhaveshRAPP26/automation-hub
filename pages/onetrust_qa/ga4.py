@@ -1,113 +1,221 @@
 """
-GA4 Network Request Parser
+ga4.py
+
+GA4 Network Request Collector
 """
 
-from urllib.parse import urlparse
-from urllib.parse import parse_qs
-
-from config import GA_ENDPOINTS
+from datetime import datetime
+from urllib.parse import urlparse, parse_qs
 
 
 class GA4Collector:
 
     def __init__(self):
 
+        # Every GA4 request captured during the session
         self.requests = []
 
-    #########################################################
+        # Requests belonging to the current QA step
+        self.current_step_requests = []
+
+        self.current_step = None
+
+    ###########################################################
+
+    def start_step(self, step):
+
+        """
+        Called by the QA runner before each QA step.
+        """
+
+        self.current_step = step
+
+        self.current_step_requests = []
+
+    ###########################################################
+
+    def end_step(self):
+
+        """
+        Returns requests generated during this step.
+        """
+
+        return self.current_step_requests.copy()
+
+    ###########################################################
 
     def clear(self):
 
-        self.requests = []
+        self.current_step_requests = []
 
-    #########################################################
+    ###########################################################
 
     def capture(self, request):
 
+        """
+        Automatically called by Playwright.
+        """
+
         url = request.url
 
-        if any(endpoint in url for endpoint in GA_ENDPOINTS):
+        if "google-analytics.com/g/collect" not in url \
+        and "analytics.google.com/g/collect" not in url:
 
-            self.requests.append(url)
+            return
 
-    #########################################################
+        parsed = urlparse(url)
+
+        params = parse_qs(parsed.query)
+
+        flat = {}
+
+        for key, value in params.items():
+
+            if len(value) == 1:
+
+                flat[key] = value[0]
+
+            else:
+
+                flat[key] = value
+
+        record = {
+
+            "timestamp":
+
+                datetime.now().strftime(
+                    "%H:%M:%S.%f"
+                )[:-3],
+
+            "step":
+
+                self.current_step,
+
+            "url":
+
+                url,
+
+            "event":
+
+                flat.get(
+                    "en",
+                    ""
+                ),
+
+            "measurement_id":
+
+                flat.get(
+                    "tid",
+                    ""
+                ),
+
+            "client_id":
+
+                flat.get(
+                    "cid",
+                    ""
+                ),
+
+            "session_id":
+
+                flat.get(
+                    "sid",
+                    ""
+                ),
+
+            "page_url":
+
+                flat.get(
+                    "dl",
+                    ""
+                ),
+
+            "page_title":
+
+                flat.get(
+                    "dt",
+                    ""
+                ),
+
+            "referrer":
+
+                flat.get(
+                    "dr",
+                    ""
+                ),
+
+            "consent_gcs":
+
+                flat.get(
+                    "gcs",
+                    ""
+                ),
+
+            "consent_gcd":
+
+                flat.get(
+                    "gcd",
+                    ""
+                ),
+
+            "parameters":
+
+                flat
+
+        }
+
+        self.requests.append(record)
+
+        self.current_step_requests.append(record)
+
+    ###########################################################
 
     def latest(self):
 
-        if len(self.requests) == 0:
+        if not self.requests:
 
             return None
 
         return self.requests[-1]
 
-    #########################################################
+    ###########################################################
 
-    def count(self):
-
-        return len(self.requests)
-
-    #########################################################
-
-    def all(self):
-
-        return self.requests
-
-    #########################################################
-
-    def latest_parameters(self):
+    def latest_event(self):
 
         latest = self.latest()
 
         if latest is None:
 
-            return {}
+            return ""
 
-        parsed = urlparse(latest)
+        return latest["event"]
 
-        query = parse_qs(parsed.query)
+    ###########################################################
 
-        result = {}
+    def request_count(self):
 
-        for key, value in query.items():
+        return len(self.current_step_requests)
 
-            if len(value) == 1:
+    ###########################################################
 
-                result[key] = value[0]
+    def all_requests(self):
 
-            else:
+        return self.requests
 
-                result[key] = value
+    ###########################################################
 
-        return result
+    def current_requests(self):
 
-    #########################################################
+        return self.current_step_requests
 
-    def latest_event(self):
+    ###########################################################
 
-        params = self.latest_parameters()
+    def latest_request_url(self):
 
-        return params.get("en", "")
+        latest = self.latest()
 
-    #########################################################
+        if latest is None:
 
-    def measurement_id(self):
+            return ""
 
-        params = self.latest_parameters()
-
-        return params.get("tid", "")
-
-    #########################################################
-
-    def client_id(self):
-
-        params = self.latest_parameters()
-
-        return params.get("cid", "")
-
-    #########################################################
-
-    def session_id(self):
-
-        params = self.latest_parameters()
-
-        return params.get("sid", "")
+        return latest["url"]

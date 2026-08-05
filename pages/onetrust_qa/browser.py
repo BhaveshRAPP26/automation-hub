@@ -46,6 +46,20 @@ class BrowserManager:
 
     ############################################################
 
+    def start_step(self, step):
+
+        self.ga4.start_step(step)
+
+    ############################################################
+
+
+    def step_requests(self):
+
+        return self.ga4.current_requests()
+
+    ############################################################
+
+
     def launch(self):
 
         self.playwright = sync_playwright().start()
@@ -123,7 +137,7 @@ class BrowserManager:
 
     def clear_requests(self):
 
-        self.ga4.clear()
+        self.ga4.start_step(step_number)
 
     ############################################################
 

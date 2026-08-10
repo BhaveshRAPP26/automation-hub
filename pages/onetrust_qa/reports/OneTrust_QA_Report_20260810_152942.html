@@ -1,0 +1,196 @@
+
+<html>
+
+<head>
+
+<title>
+OneTrust Consent QA Report
+</title>
+
+
+<style>
+
+body {
+
+font-family: Arial;
+
+}
+
+
+table {
+
+border-collapse: collapse;
+
+width:100%;
+
+}
+
+
+th {
+
+background:#333;
+
+color:white;
+
+padding:8px;
+
+}
+
+
+td {
+
+border:1px solid #ddd;
+
+padding:8px;
+
+}
+
+
+</style>
+
+
+</head>
+
+
+<body>
+
+
+<h1>
+OneTrust Consent Mode QA Report
+</h1>
+
+
+<p>
+Generated:
+2026-08-10 15:29:42.498367
+</p>
+
+
+<table border="1" class="dataframe table">
+  <thead>
+    <tr style="text-align: right;">
+      <th>URL</th>
+      <th>Step</th>
+      <th>Action</th>
+      <th>Expected</th>
+      <th>Actual</th>
+      <th>Active Groups</th>
+      <th>GA4 Event</th>
+      <th>GA4 Requests</th>
+      <th>Status</th>
+      <th>Notes</th>
+      <th>Timestamp</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>https://us.lubricants.mobil.com/fleets/hub</td>
+      <td>1</td>
+      <td>Page Load</td>
+      <td>OneTrustGroupsUpdated + GA4 page_view</td>
+      <td>,C0001,C0003,SSPD_BG,C0004,C0002, | page_view</td>
+      <td>,C0001,C0003,SSPD_BG,C0004,C0002,</td>
+      <td>page_view</td>
+      <td>2</td>
+      <td>PASS</td>
+      <td></td>
+      <td>2026-08-10 15:28:39</td>
+    </tr>
+    <tr>
+      <td>https://us.lubricants.mobil.com/fleets/hub</td>
+      <td>2</td>
+      <td>Click link_ element</td>
+      <td>No navigation. DataLayer updated</td>
+      <td>,C0001,C0003,SSPD_BG,C0004,C0002,</td>
+      <td>,C0001,C0003,SSPD_BG,C0004,C0002,</td>
+      <td></td>
+      <td>0</td>
+      <td>PASS</td>
+      <td></td>
+      <td>2026-08-10 15:28:45</td>
+    </tr>
+    <tr>
+      <td>https://us.lubricants.mobil.com/fleets/hub</td>
+      <td>3</td>
+      <td>Accept cookies</td>
+      <td>No GA4 request after accept</td>
+      <td>Accepted=True</td>
+      <td>,C0003,C0001,C0004,C0002,SSPD_BG,</td>
+      <td></td>
+      <td>2</td>
+      <td>FAIL</td>
+      <td></td>
+      <td>2026-08-10 15:28:49</td>
+    </tr>
+    <tr>
+      <td>https://us.lubricants.mobil.com/fleets/hub</td>
+      <td>4</td>
+      <td>Click second link_</td>
+      <td>GA4 request expected</td>
+      <td></td>
+      <td>,C0003,C0001,C0004,C0002,SSPD_BG,</td>
+      <td></td>
+      <td>0</td>
+      <td>FAIL</td>
+      <td></td>
+      <td>2026-08-10 15:28:54</td>
+    </tr>
+    <tr>
+      <td>https://us.lubricants.mobil.com/fleets/hub</td>
+      <td>5</td>
+      <td>Same domain navigation</td>
+      <td>GA4 page_view expected</td>
+      <td>page_view</td>
+      <td>,C0003,C0001,C0004,C0002,SSPD_BG,</td>
+      <td>page_view</td>
+      <td>5</td>
+      <td>PASS</td>
+      <td></td>
+      <td>2026-08-10 15:29:19</td>
+    </tr>
+    <tr>
+      <td>https://us.lubricants.mobil.com/fleets/hub</td>
+      <td>6</td>
+      <td>Reject all cookies</td>
+      <td>Consent groups updated</td>
+      <td>,C0003,C0001,</td>
+      <td>,C0003,C0001,</td>
+      <td>page_view</td>
+      <td>5</td>
+      <td>PASS</td>
+      <td></td>
+      <td>2026-08-10 15:29:22</td>
+    </tr>
+    <tr>
+      <td>https://us.lubricants.mobil.com/fleets/hub</td>
+      <td>7</td>
+      <td>Click after rejection</td>
+      <td>No GA4 request</td>
+      <td></td>
+      <td>,C0003,C0001,</td>
+      <td></td>
+      <td>0</td>
+      <td>PASS</td>
+      <td></td>
+      <td>2026-08-10 15:29:25</td>
+    </tr>
+    <tr>
+      <td>https://us.lubricants.mobil.com/fleets/hub</td>
+      <td>8</td>
+      <td>Navigation after rejection</td>
+      <td>No GA4 page_view</td>
+      <td></td>
+      <td>,C0003,C0001,</td>
+      <td></td>
+      <td>0</td>
+      <td>PASS</td>
+      <td></td>
+      <td>2026-08-10 15:29:42</td>
+    </tr>
+  </tbody>
+</table>
+
+</body>
+
+</html>
+

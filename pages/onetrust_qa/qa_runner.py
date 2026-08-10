@@ -71,6 +71,10 @@ class OneTrustQARunner:
                 self.url,
 
 
+            "current_url":
+                self.browser.current_url(),
+
+
             "step":
                 step,
 

@@ -249,11 +249,24 @@ if st.button(
     )
 
 
+    display_columns = [
+    "step",
+    "action",
+    "current_url",
+    "active_groups",
+    "ga_event",
+    "ga_requests",
+    "status",
+    "notes"
+    ]
+
     st.dataframe(
 
-        df,
+    df[display_columns],
 
-        use_container_width=True
+    use_container_width=True,
+
+    hide_index=True
 
     )
 

@@ -1,8 +1,8 @@
 import re
+import requests
 import pandas as pd
 import streamlit as st
 from io import BytesIO
-from playwright.sync_api import sync_playwright, TimeoutError as PlaywrightTimeoutError
 
 # ------------------------------------
 # PAGE CONFIG
@@ -40,32 +40,22 @@ def normalize_url(url):
     return url
 
 
-def extract_ot_snippet(page):
+def extract_ot_snippet(html):
     """
-    Extract the OneTrust script directly from the fully loaded page.
-
-    Playwright loads and renders the page first, then the DOM is inspected.
-    This is preferable to requests because OneTrust can be injected or
-    modified by JavaScript after the initial HTML response.
+    Extract OneTrust script.
     """
 
-    # Look specifically for the OneTrust script element.
-    scripts = page.locator('script[data-domain-script]')
-
-    try:
-        scripts.first.wait_for(state="attached", timeout=10000)
-    except PlaywrightTimeoutError:
-        return None
-
-    count = scripts.count()
-
-    if count == 0:
-        return None
-
-    # Return the complete script element HTML.
-    return scripts.first.evaluate(
-        "(element) => element.outerHTML"
+    pattern = re.compile(
+        r'data-domain-script=.*?</script>',
+        re.DOTALL
     )
+
+    match = pattern.search(html)
+
+    if match:
+        return match.group(0)
+
+    return None
 
 
 def detect_modal(snippet):
@@ -94,64 +84,7 @@ def detect_modal(snippet):
             "c30d7be0-4ac6-4ab0-9d9b-b5f2a2190a2d"
         )
 
-    return "Unknown Modal", snippet.split("data-domain-script=")[1].split(">")[0].strip('"')
-
-
-def analyze_url(page, url):
-    """
-    Load a URL using Playwright and inspect the rendered DOM
-    after the page has finished loading.
-    """
-
-    try:
-        page.goto(
-            url,
-            wait_until="load",
-            timeout=30000
-        )
-
-        # Give scripts that run immediately after the load event a brief
-        # opportunity to inject the OneTrust script into the DOM.
-        page.wait_for_timeout(2000)
-
-        snippet = extract_ot_snippet(page)
-
-        if snippet:
-            modal, domain_script = detect_modal(snippet)
-
-            return {
-                "URL": url,
-                "Domain Script": domain_script,
-                "Modal": modal,
-                "Status": "Success",
-                "Error": ""
-            }
-
-        return {
-            "URL": url,
-            "Domain Script": "",
-            "Modal": "Unknown",
-            "Status": "No snippet found",
-            "Error": ""
-        }
-
-    except PlaywrightTimeoutError:
-        return {
-            "URL": url,
-            "Domain Script": "",
-            "Modal": "Error",
-            "Status": "Timeout",
-            "Error": "Page load or OneTrust script detection timed out"
-        }
-
-    except Exception as e:
-        return {
-            "URL": url,
-            "Domain Script": "",
-            "Modal": "Error",
-            "Status": "Error",
-            "Error": str(e)
-        }
+    return "Unknown", ""
 
 
 # ------------------------------------
@@ -191,53 +124,98 @@ if analyze:
         st.stop()
 
     progress_bar = st.progress(0)
+
     status_text = st.empty()
+
     table_placeholder = st.empty()
 
     results = []
+
     total = len(urls)
 
-    # Launch one browser and reuse it for all URLs.
-    # This is considerably faster than starting a new browser for every URL.
-    with sync_playwright() as p:
+    for index, url in enumerate(urls):
 
-        browser = p.chromium.launch(
-            headless=True
+        status_text.info(
+            f"Processing {index + 1} of {total}\n\n{url}"
         )
 
-        context = browser.new_context(
-            user_agent=(
-                "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
-                "AppleWebKit/537.36 (KHTML, like Gecko) "
-                "Chrome/151.0.0.0 Safari/537.36"
-            ),
-            ignore_https_errors=True
+        modal = "Error"
+        domain_script = ""
+        status = "Success"
+        error = ""
+
+        try:
+
+            response = requests.get(
+                url,
+                timeout=15,
+                headers={
+                    "User-Agent":
+                    "Mozilla/5.0"
+                }
+            )
+
+            response.raise_for_status()
+
+            snippet = extract_ot_snippet(
+                response.text
+            )
+
+            if snippet:
+
+                modal, domain_script = detect_modal(
+                    snippet
+                )
+
+            else:
+
+                modal = "Unknown"
+                status = "No snippet found"
+
+        except requests.exceptions.Timeout:
+
+            status = "Timeout"
+            error = "Request timed out"
+
+        except requests.exceptions.SSLError:
+
+            status = "SSL Error"
+            error = "SSL certificate error"
+
+        except requests.exceptions.HTTPError as e:
+
+            status = "HTTP Error"
+            error = str(e)
+
+        except requests.exceptions.ConnectionError:
+
+            status = "Connection Error"
+            error = "Unable to connect"
+
+        except Exception as e:
+
+            status = "Error"
+            error = str(e)
+
+        results.append({
+            "URL": url,
+            "Domain Script": domain_script,
+            "Modal": modal,
+            "Status": status,
+            "Error": error
+        })
+
+        df = pd.DataFrame(results)
+
+        table_placeholder.dataframe(
+            df,
+            use_container_width=True,
+            hide_index=True
         )
 
-        page = context.new_page()
-
-        for index, url in enumerate(urls):
-
-            status_text.info(
-                f"Processing {index + 1} of {total}\n\n{url}"
-            )
-
-            result = analyze_url(page, url)
-            results.append(result)
-
-            df = pd.DataFrame(results)
-
-            table_placeholder.dataframe(
-                df,
-                use_container_width=True,
-                hide_index=True
-            )
-
-            progress_bar.progress(
-                (index + 1) / total
-            )
-
-        browser.close()
+        progress_bar.progress(
+            (index + 1) / total
+        )
 
     status_text.success("Analysis complete!")
 
@@ -252,8 +230,8 @@ if analyze:
 
     total_sites = len(df)
 
-    us_modal = (df["Modal"] == "US Modal").sum()
-    ca_modal = (df["Modal"] == "CA Modal").sum()
+    traditional = (df["Modal"] == "Traditional Modal").sum()
+    new = (df["Modal"] == "New Modal").sum()
     corporate = (df["Modal"] == "Corporate Modal").sum()
     unknown = (df["Modal"] == "Unknown").sum()
 
@@ -264,8 +242,8 @@ if analyze:
     c1, c2, c3, c4, c5, c6 = st.columns(6)
 
     c1.metric("Total", total_sites)
-    c2.metric("US", us_modal)
-    c3.metric("CA", ca_modal)
+    c2.metric("Traditional", traditional)
+    c3.metric("New", new)
     c4.metric("Corporate", corporate)
     c5.metric("Unknown", unknown)
     c6.metric("Errors", errors)

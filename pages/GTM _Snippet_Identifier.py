@@ -80,7 +80,7 @@ def detect_modal(snippet):
 
     id_val = snippet.split("GTM-")[1].strip("'")
 
-    return "Unknown ID", "GTM-" + id_val.split("'")[0]
+    return "Unknown ID",  "GTM-" + id_val.split(";")[0][:-2]
     #return "Unknown", ""
 
 

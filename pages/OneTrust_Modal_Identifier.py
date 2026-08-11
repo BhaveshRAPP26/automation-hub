@@ -68,13 +68,13 @@ def detect_modal(snippet):
 
     if 'data-domain-script="b6ad5043-a6c1-4c5e-b62c-4e6f6e544168"' in snippet:
         return (
-            "Traditional Modal",
+            "US Modal",
             "b6ad5043-a6c1-4c5e-b62c-4e6f6e544168"
         )
 
     if 'data-domain-script="8e9f51d5-bb35-43e2-8c8b-3dcd786f6159"' in snippet:
         return (
-            "New Modal",
+            "CA Modal",
             "8e9f51d5-bb35-43e2-8c8b-3dcd786f6159"
         )
 

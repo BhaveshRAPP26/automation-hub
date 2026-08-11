@@ -11,8 +11,11 @@ st.set_page_config(
 st.write("# Welcome to the Automation Hub!")
 
 
-st.markdown(
-    """
-    Please select a program that you want to execute, from the sidebar.
-"""
-)
+file = open("README.md", "r")
+readme = file.readlines()
+file.close()
+
+programs = readme[3:]
+
+for elem in programs:
+    st.markdown(elem.strip("\n"))

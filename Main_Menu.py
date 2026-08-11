@@ -8,7 +8,7 @@ st.set_page_config(
     page_icon="👋",
 )
 
-st.write("# Welcome to the Automation Hub!")
+st.write("# Exxon AE Automation Hub!")
 
 
 file = open("README.md", "r")

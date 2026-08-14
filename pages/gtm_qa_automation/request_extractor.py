@@ -30,7 +30,7 @@ async def main(START_URL, ids_list):
     ga_requests = []
 
     async with async_playwright() as pw:
-        browser = await pw.chromium.launch(headless=False)  # set True if you don't want UI
+        browser = await pw.chromium.launch(headless=True)  # set True if you don't want UI
         context = await browser.new_context()
         page = await context.new_page()
         

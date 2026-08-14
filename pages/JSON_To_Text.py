@@ -47,21 +47,45 @@ def extract_requests(data):
     return results
 
 
-def main():
-    # Read JSON file
-    with open(INPUT_JSON_FILE, "r", encoding="utf-8") as f:
-        data = json.load(f)
+def main(uploaded_file):
+    # Read uploaded JSON file
+    data = json.load(uploaded_file)
 
     # Extract and concatenate requests
     final_urls = extract_requests(data)
 
-    # Write to output text file
-    with open(OUTPUT_TEXT_FILE, "w", encoding="utf-8") as f:
-        for url in final_urls:
-            f.write(url + "\n")
+    # Prepare output text
+    output_text = "\n".join(final_urls) + ("\n" if final_urls else "")
 
-    print(f"Done. {len(final_urls)} URLs written to {OUTPUT_TEXT_FILE}")
+    return final_urls, output_text
 
 
 if __name__ == "__main__":
-    main()
+    import streamlit as st
+
+    st.set_page_config(layout="wide")
+    st.title("JSON to Text")
+
+    uploaded_file = st.file_uploader(
+        "Upload JSON file",
+        type=["json"]
+    )
+
+    if uploaded_file is not None:
+        if st.button("Convert"):
+            try:
+                final_urls, output_text = main(uploaded_file)
+
+                st.success(
+                    f"Done. {len(final_urls)} URLs extracted."
+                )
+
+                st.download_button(
+                    label="Download Text File",
+                    data=output_text,
+                    file_name=OUTPUT_TEXT_FILE,
+                    mime="text/plain"
+                )
+
+            except Exception as e:
+                st.error(f"Error processing JSON file: {e}")

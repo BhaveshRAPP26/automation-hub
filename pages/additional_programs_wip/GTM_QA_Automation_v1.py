@@ -1,4 +1,4 @@
-import request_extractor as gq
+from gtm_qa_automation import request_extractor as gq
 import streamlit as st
 import asyncio
 

@@ -24,7 +24,7 @@ def is_ga_request(url: str) -> bool:
     return any(pat in lower for pat in GA_PATTERNS)
 
 
-async def main(START_URL):
+async def main(START_URL, ids_list):
 
 
     ga_requests = []
@@ -88,12 +88,13 @@ async def main(START_URL):
         #selector = "#link_header_logo, #cta_nav_1, #link_nav1_dd1"
         #selector = "#link_navdd1_2, #link_navdd1_3, #link_navdd1_4"
         
-        file = open("ids.txt","r")
-        lines = file.readlines()
-        file.close()
+        #file = open("ids.txt","r")
+        #lines = file.readlines()
+        #file.close()
+
 
         selector_list = []
-        for elem in lines:
+        for elem in ids_list:
             if "link_nav" not in elem and "link_video" not in elem and "link_exit" not in elem:
                 selector_list.append("#"+elem.strip("\n"))
 
@@ -154,13 +155,34 @@ async def main(START_URL):
         #FORMATTED_START_URL = f"{START_URL.replace('https://', '').replace('http://', '').replace('/', '_')}"
         FORMATTED_START_URL = START_URL.replace('https://', '').replace('http://', '').replace('/', '_')
 
-
+        """
         # Save captured requests to disk
         #with open("ga_requests.json", "w", encoding="utf-8") as f: #overwriting
-        with open("requests_json/" + FORMATTED_START_URL + ".json", "w", encoding="utf-8") as f: # appending
+        with open("gtm_qa_automation/requests_json/" + FORMATTED_START_URL + ".json", "w", encoding="utf-8") as f: # appending
             json.dump(ga_requests, f, indent=2, ensure_ascii=False)
+
+        print(f"\nDone. Captured {len(ga_requests)} GA requests")
+        """
+
+
+        # Prepare captured requests as a downloadable JSON file
+        json_output = json.dumps(
+            ga_requests,
+            indent=2,
+            ensure_ascii=False
+        )
 
         print(f"\nDone. Captured {len(ga_requests)} GA requests")
 
         await browser.close()
+
+        return {
+            "filename": FORMATTED_START_URL + ".json",
+            "content": json_output
+        }
+
+
+
+
+        
 

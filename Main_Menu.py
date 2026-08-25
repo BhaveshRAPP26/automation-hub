@@ -4,18 +4,16 @@ import subprocess
 subprocess.run(["playwright", "install"], check=True)
 
 st.set_page_config(
-    page_title="Hello",
+    page_title="Automation Hub",
     page_icon="👋",
 )
 
-st.write("# Exxon AE Automation Hub!")
 
 
 file = open("README.md", "r")
-readme = file.readlines()
+readme = file.read()
 file.close()
 
-programs = readme[3:]
 
-for elem in programs:
-    st.markdown(elem.strip("\n"))
+st.markdown(readme)
+

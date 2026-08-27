@@ -268,10 +268,6 @@ gemini_api_key = st.text_input(
 
 st.session_state["gemini_api_key"] = gemini_api_key
 
-if gemini_api_key:
-    st.success("Gemini API key entered.")
-
-
 # ============================================================
 # AI ASSISTANT
 # ============================================================

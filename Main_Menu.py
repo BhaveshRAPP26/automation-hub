@@ -9,7 +9,7 @@ import json
 # ============================================================
 
 st.set_page_config(
-    page_title="Analytics Automation Hub",
+    page_title="Analytics Enablement - Automation Hub",
     page_icon="⚡",
     layout="wide",
     initial_sidebar_state="collapsed"
@@ -218,7 +218,7 @@ def render_automation_card(automation):
 st.markdown(
     """
     <h1 style="margin-bottom:0;">
-        ⚡ Analytics Automation Hub
+        ⚡ Analytics Enablement - Automation Hub
     </h1>
     """,
     unsafe_allow_html=True
@@ -237,9 +237,13 @@ st.markdown(
 # ============================================================
 # GEMINI API KEY
 # ============================================================
-
-st.markdown("### 🔑 Gemini API Key")
-
+st.divider()
+st.markdown("## 🤖 AI Assistant")
+st.write(
+    "Describe what you want to accomplish and "
+    "the AI Assistant will recommend the appropriate "
+    "automation."
+)
 st.markdown(
     """
     <style>
@@ -272,13 +276,7 @@ if gemini_api_key:
 # AI ASSISTANT
 # ============================================================
 
-st.markdown("## 🤖 AI Assistant")
 
-st.write(
-    "Describe what you want to accomplish and "
-    "the AI Assistant will recommend the appropriate "
-    "automation."
-)
 
 
 col1, col2 = st.columns(
@@ -440,7 +438,7 @@ if "ai_result" in st.session_state:
 # ============================================================
 # CATALOGUE CONTROLS
 # ============================================================
-
+st.divider()
 st.markdown("## 📚 Automation Catalogue")
 
 search_col, category_col, tag_col = st.columns(

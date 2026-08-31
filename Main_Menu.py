@@ -238,10 +238,10 @@ st.markdown(
 # GEMINI API KEY
 # ============================================================
 st.divider()
-st.markdown("## 🤖 AI Assistant")
+st.markdown("## 🤖 Gemini-Supported Search Engine")
 st.write(
     "Describe what you want to accomplish and "
-    "the AI Assistant will recommend the appropriate "
+    "the AI Assistant will recommend the appropriate, existing "
     "automation."
 )
 st.markdown(

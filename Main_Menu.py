@@ -110,12 +110,10 @@ def get_filtered_automations(
         if search_term:
 
             search_text = " ".join([
-                automation["name"],
-                automation["description"],
-                automation["category"],
-                automation["input"],
-                automation["output"],
-                " ".join(automation["tags"])
+                str(automation.get("name", "")),
+                str(automation.get("description", "")),
+                str(automation.get("category", "")),
+                " ".join(automation.get("tags", []))
             ]).lower()
 
             if search_term.lower() not in search_text:

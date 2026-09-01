@@ -395,5 +395,52 @@ AUTOMATIONS = [
         ],
 
         "page": "pages/OneTrust_QA_(WIP).py"
+    },
+
+    # ========================================================
+    # 9. ONETRUST SCRIPT IDENTIFIER
+    # ========================================================
+        {
+        "id": "onetrust_script_identifier",
+        "name": "OneTrust Script Identifier",
+        "category": "OneTrust",
+        "status": "Production",
+
+        "description": (
+            "Takes multiple website URLs, visits the websites "
+            "and scrapes their HTML to identify the OneTrust "
+            "domain-script GUID, optionally mapping it to a "
+            "readable label via a user-supplied mapping."
+        ),
+
+        "use_when": [
+            "The user wants to identify a OneTrust domain-script GUID",
+            "The user wants to check OneTrust implementation",
+            "The user wants to identify OneTrust IDs across websites",
+            "The user has multiple URLs requiring OneTrust identification",
+            "The user wants to group or label sites by their OneTrust script across any project"
+        ],
+
+        "input": [
+            "Website URLs",
+            "Domain-script to label mapping (optional)"
+        ],
+
+        "output": [
+            "OneTrust domain-script GUID",
+            "Mapped group label (if mapping supplied)"
+        ],
+
+        "scope": "Project-agnostic",
+
+        "tags": [
+            "OneTrust",
+            "Consent",
+            "Snippet",
+            "HTML",
+            "Scraping"
+        ],
+
+        "page": "pages/OneTrust_Script_Identifier.py"
     }
 ]
